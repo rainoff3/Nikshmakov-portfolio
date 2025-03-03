@@ -9,19 +9,11 @@ body {
 /* Хеддер */
 header {
     display: flex;
-    justify-content: center; /* Центрируем содержимое */
+    justify-content: center; /* Выравнивание логотипа по центру */
     align-items: center;
-    height: 120px; /* Подбери оптимальную высоту */
     position: relative;
+    padding: 20px 0;
 }
-
-.logo {
-    max-width: 250px; /* Уменьшаем размер логотипа */
-    height: auto; /* Сохраняем пропорции */
-    display: block;
-}
-
-
 
 /* Контейнер соцсетей */
 .social-icons {
