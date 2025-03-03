@@ -10,8 +10,8 @@ body {
 /* Хеддер */
 header {
     display: flex;
-    justify-content: center; /* Выравнивание логотипа по центру */
-    align-items: center;
+    justify-content: right; /* Выравнивание логотипа по центру */
+    align-items: right;
     position: relative;
     padding: 20px 0;
 }
@@ -34,7 +34,7 @@ header {
 
 /* Иконки соцсетей */
 .social-icons img {
-    width: 30px; /* Размер иконок соцсетей */
+    width: 50px; /* Размер иконок соцсетей */
     height: auto;
 }
 
@@ -73,6 +73,6 @@ footer {
 }
 
 .footer-icons img {
-    width: 30px; /* Размер иконок в подвале */
+    width: 50px; /* Размер иконок в подвале */
     height: auto;
 }
