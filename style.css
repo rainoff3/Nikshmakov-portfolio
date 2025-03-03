@@ -18,22 +18,24 @@ header {
 }
 
 /* Логотип */
+/* Логотип */
 .logo {
-    max-width: 180px; /* Увеличенный логотип */
+    max-width: 180px; /* Размер логотипа */
     display: block;
     margin: 0 auto; /* Центрирование */
+    transform: translateX(-10px); /* Смещаем чуть левее */
 }
 
 /* Контейнер соцсетей */
 .social-icons {
     position: absolute;
-    left: 20px; /* Расположение слева */
-    top: 50%; /* Центрирование по вертикали */
-    transform: translateY(-50%);
+    left: 40px; /* Двигаем правее */
+    top: 10px; /* Опускаем чуть ниже */
     display: flex;
-    flex-direction: column; /* Расположение иконок в столбец */
-    gap: 15px; /* Отступ между иконками */
+    flex-direction: row; /* Делаем в ряд */
+    gap: 15px; /* Расстояние между иконками */
 }
+
 
 /* Иконки соцсетей */
 .social-icons img {
