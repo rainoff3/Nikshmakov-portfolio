@@ -1,49 +1,78 @@
+/* Основные стили */
 body {
-    background-color: #f6f5f0;
-    color: black;
-    font-family: Arial, sans-serif;
+    background-color: #f6f5f0; /* Цвет фона */
+    color: black; /* Цвет текста */
+    font-family: Arial, sans-serif; /* Шрифт по умолчанию */
     margin: 0;
     padding: 0;
 }
 
-.header {
+/* Хеддер */
+header {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Выравнивание логотипа по центру */
     align-items: center;
     position: relative;
     padding: 20px 0;
 }
 
+/* Логотип */
 .logo {
-    text-align: center;
-    font-size: 36px;
-    font-weight: bold;
+    max-width: 150px; /* Максимальная ширина логотипа */
 }
 
+/* Контейнер соцсетей */
 .social-icons {
     position: absolute;
-    left: 20px;
-    top: 50%;
+    left: 20px; /* Расположение слева */
+    top: 50%; /* Центрирование по вертикали */
     transform: translateY(-50%);
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: column; /* Расположение иконок в столбец */
+    gap: 10px; /* Отступ между иконками */
 }
 
-.social-icons a img {
-    width: 40px;
-    height: 40px;
+/* Иконки соцсетей */
+.social-icons img {
+    width: 10px; /* Размер иконок соцсетей */
+    height: auto;
 }
 
-.footer {
-    text-align: center;
+/* Основной контент */
+.main-content {
+    text-align: center; /* Выравнивание заголовков по центру */
     padding: 20px;
 }
 
-.footer .social-icons {
-    position: static;
+/* Видео-контейнер */
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Два видео в ряд на ПК, одно на телефоне */
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Видео */
+.video-container iframe {
+    width: 100%; /* Адаптивное видео */
+    height: 200px; /* Фиксированная высота видео */
+}
+
+/* Подвал */
+footer {
+    text-align: center; /* Выравнивание текста в центре */
+    padding: 20px;
+}
+
+/* Контейнер иконок в подвале */
+.footer-icons {
     display: flex;
     justify-content: center;
-    flex-direction: row;
-    gap: 15px;
+    gap: 15px; /* Расстояние между иконками */
+    margin-top: 10px;
+}
+
+.footer-icons img {
+    width: 10px; /* Размер иконок в подвале */
+    height: auto;
 }
