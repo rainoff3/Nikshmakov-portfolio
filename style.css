@@ -18,14 +18,19 @@ header {
 }
 
 /* Логотип */
-/* Логотип */
 
+.logo {
+    max-width: 100px; /* Размер логотипа */
+    display: block;
+    margin: 0 auto; /* Центрирование */
+    transform: translateX(-50px); /* Смещаем чуть левее */
+}
 
 /* Контейнер соцсетей */
 .social-icons {
     position: absolute;
     left: 40px; /* Двигаем правее */
-    top: 50px; /* Опускаем чуть ниже */
+    top: 100px; /* Опускаем чуть ниже */
     display: flex;
     flex-direction: row; /* Делаем в ряд */
     gap: 15px; /* Расстояние между иконками */
@@ -34,7 +39,7 @@ header {
 
 /* Иконки соцсетей */
 .social-icons img {
-    width: 60px; /* Увеличил размер иконок соцсетей */
+    width: 30px; /* Увеличил размер иконок соцсетей */
     height: auto;
 }
 
