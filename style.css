@@ -23,7 +23,7 @@ header {
     max-width: 180px; /* Размер логотипа */
     display: block;
     margin: 0 auto; /* Центрирование */
-    transform: translateX(-10px); /* Смещаем чуть левее */
+    transform: translateX(-50px); /* Смещаем чуть левее */
 }
 
 /* Контейнер соцсетей */
