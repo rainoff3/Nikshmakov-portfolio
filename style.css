@@ -20,7 +20,7 @@ header {
 /* Логотип */
 /* Логотип */
 .logo {
-    max-width: 180px; /* Размер логотипа */
+    max-width: 100px; /* Размер логотипа */
     display: block;
     margin: 0 auto; /* Центрирование */
     transform: translateX(-50px); /* Смещаем чуть левее */
