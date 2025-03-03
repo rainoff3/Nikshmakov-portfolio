@@ -11,17 +11,16 @@ header {
     display: flex;
     justify-content: center; /* Центрируем содержимое */
     align-items: center;
+    height: 120px; /* Подбери оптимальную высоту */
     position: relative;
-    padding: 20px 0;
 }
 
 .logo {
-    max-width: 100px; /* Измени, если нужно */
+    max-width: 250px; /* Уменьшаем размер логотипа */
+    height: auto; /* Сохраняем пропорции */
     display: block;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
 }
+
 
 
 /* Контейнер соцсетей */
