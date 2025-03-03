@@ -9,22 +9,16 @@ body {
 /* Хеддер */
 header {
     display: flex;
-    justify-content: center; /* Выравнивание по центру */
+    justify-content: center; /* Центрируем содержимое */
     align-items: center;
-    text-align: center;
     position: relative;
     padding: 20px 0;
-    width: 100%;
 }
 
-/* Логотип */
 .logo {
-    max-width: 100px; /* Регулируй размер по необходимости */
+    max-width: 100px; /* Подстрой размер */
     display: block;
-    margin: 0 auto; /* Центрирование */
 }
-
-
 
 /* Контейнер соцсетей */
 .social-icons {
