@@ -15,9 +15,11 @@ header {
     padding: 20px 0;
 }
 .logo img {
-    width: 150px; /* Уменьши размер логотипа */
-    height: auto; /* Сохраняем пропорции */
+    width: 150px;
+    height: auto;
+    margin-top: 20px; /* Подбирай нужное значение */
 }
+
 
 /* Контейнер соцсетей */
 .social-icons {
