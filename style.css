@@ -6,19 +6,22 @@ body {
     margin: 0;
     padding: 0;
 }
-
 /* Хеддер */
 header {
     display: flex;
-    justify-content: center; /* Логотип по центру */
+    justify-content: center; /* Выравнивание по центру */
     align-items: center;
+    text-align: center;
     position: relative;
     padding: 20px 0;
+    width: 100%;
 }
 
 /* Логотип */
 .logo {
-    max-width: 120px; /* Увеличил размер логотипа */
+    max-width: 180px; /* Увеличенный логотип */
+    display: block;
+    margin: 0 auto; /* Центрирование */
 }
 
 /* Контейнер соцсетей */
@@ -44,11 +47,12 @@ header {
     padding: 20px;
 }
 
-/* Заголовки разделов */
+/* Заголовки */
 h2 {
-    text-align: center; /* Выравнивание по центру */
-    font-size: 24px; /* Увеличил размер заголовков */
-    margin-bottom: 20px;
+    text-align: center; /* Выравнивание заголовков по центру */
+    font-size: 28px; /* Чуть больше размер */
+    font-weight: bold;
+    margin: 40px 0 20px 0;
 }
 
 /* Видео-контейнер */
