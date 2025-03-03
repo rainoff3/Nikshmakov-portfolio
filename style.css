@@ -10,15 +10,15 @@ body {
 /* Хеддер */
 header {
     display: flex;
-    justify-content: right; /* Выравнивание логотипа по центру */
-    align-items: right;
+    justify-content: center; /* Логотип по центру */
+    align-items: center;
     position: relative;
     padding: 20px 0;
 }
 
 /* Логотип */
 .logo {
-    max-width: 50px; /* Максимальная ширина логотипа */
+    max-width: 120px; /* Увеличил размер логотипа */
 }
 
 /* Контейнер соцсетей */
@@ -29,12 +29,12 @@ header {
     transform: translateY(-50%);
     display: flex;
     flex-direction: column; /* Расположение иконок в столбец */
-    gap: 10px; /* Отступ между иконками */
+    gap: 15px; /* Отступ между иконками */
 }
 
 /* Иконки соцсетей */
 .social-icons img {
-    width: 50px; /* Размер иконок соцсетей */
+    width: 60px; /* Увеличил размер иконок соцсетей */
     height: auto;
 }
 
@@ -44,10 +44,17 @@ header {
     padding: 20px;
 }
 
+/* Заголовки разделов */
+h2 {
+    text-align: center; /* Выравнивание по центру */
+    font-size: 24px; /* Увеличил размер заголовков */
+    margin-bottom: 20px;
+}
+
 /* Видео-контейнер */
 .video-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Два видео в ряд на ПК, одно на телефоне */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Два видео в ряд на ПК, одно на телефоне */
     gap: 20px;
     justify-content: center;
 }
@@ -55,7 +62,7 @@ header {
 /* Видео */
 .video-container iframe {
     width: 100%; /* Адаптивное видео */
-    height: 200px; /* Фиксированная высота видео */
+    height: 250px; /* Увеличил высоту видео */
 }
 
 /* Подвал */
@@ -68,11 +75,11 @@ footer {
 .footer-icons {
     display: flex;
     justify-content: center;
-    gap: 15px; /* Расстояние между иконками */
+    gap: 20px; /* Увеличил расстояние между иконками */
     margin-top: 10px;
 }
 
 .footer-icons img {
-    width: 50px; /* Размер иконок в подвале */
+    width: 60px; /* Увеличил размер иконок в подвале */
     height: auto;
 }
