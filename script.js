@@ -4,23 +4,27 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeModalBtn = document.querySelector(".close");
 
     function openModal(videoUrl) {
+        if (!videoUrl) return; // Проверка на пустой URL
+
         modalVideo.src = videoUrl;
-        modal.classList.add("show");
+        modal.style.display = "flex"; // Делаем модалку видимой
+        setTimeout(() => {
+            modal.style.opacity = "1"; // Плавное появление
+        }, 10);
     }
 
     function closeModal() {
-        modal.classList.remove("show");
+        modal.style.opacity = "0"; // Плавное исчезновение
         setTimeout(() => {
-            modalVideo.src = ""; // Очищаем src, чтобы видео останавливалось
+            modal.style.display = "none";
+            modalVideo.src = ""; // Очищаем видео, чтобы оно останавливалось
         }, 300);
     }
 
     document.querySelectorAll(".video-frame").forEach(frame => {
         frame.addEventListener("click", function () {
-            const videoUrl = frame.getAttribute("data-video-url");
-            if (videoUrl) {
-                openModal(videoUrl);
-            }
+            const videoUrl = frame.getAttribute("onclick").match(/'(.*?)'/)[1]; // Берём URL из `onclick`
+            openModal(videoUrl);
         });
     });
 
@@ -32,6 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // **Фикс бага с появлением при загрузке**  
-    modal.classList.remove("show"); 
+    // Убираем случайное появление при загрузке
+    modal.style.display = "none";
 });
