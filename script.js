@@ -1,35 +1,46 @@
 document.addEventListener("DOMContentLoaded", function () {
     const videoFrames = document.querySelectorAll(".video-frame");
-    const modal = document.getElementById("videoModal");
-    const modalVideo = document.getElementById("modalVideo");
-    const closeModal = document.querySelector(".close");
 
     videoFrames.forEach(frame => {
         const videoId = frame.getAttribute("data-video-id");
+        const previewSrc = frame.getAttribute("data-preview"); // Получаем путь к превью
 
-        // Устанавливаем фоновое изображение и иконку Play
-        frame.style.background = `url('https://vk.com/images/video_preview.jpg') center/cover`;
-        frame.style.display = "flex";
-        frame.style.alignItems = "center";
-        frame.style.justifyContent = "center";
-        frame.style.cursor = "pointer";
-        frame.innerHTML = `<span style="font-size: 50px; color: white;">▶</span>`;
+        if (videoId && previewSrc) {
+            // Устанавливаем превью как фон div
+            frame.style.backgroundImage = `url('${previewSrc}')`;
+            frame.style.backgroundSize = "cover";
+            frame.style.backgroundPosition = "center";
+            frame.style.cursor = "pointer";
 
-        frame.addEventListener("click", () => {
-            modalVideo.src = `https://vkvideo.ru/video_ext.php?oid=226153973&id=${videoId}&hd=2`;
-            modal.classList.add("show");
-        });
+            // Добавляем обработчик клика для открытия модального окна
+            frame.addEventListener("click", function () {
+                openModal(videoId);
+            });
+        }
     });
 
-    closeModal.addEventListener("click", () => {
-        modal.classList.remove("show");
-        modalVideo.src = "";
+    // Открытие модального окна
+    function openModal(videoId) {
+        const modal = document.getElementById("videoModal");
+        const modalVideo = document.getElementById("modalVideo");
+
+        modal.style.display = "block";
+        modalVideo.src = `https://vkvideo.ru/video_ext.php?oid=226153973&id=${videoId}&hd=2`;
+    }
+
+    // Закрытие модального окна
+    const closeModal = document.querySelector(".close");
+    closeModal.addEventListener("click", function () {
+        document.getElementById("videoModal").style.display = "none";
+        document.getElementById("modalVideo").src = "";
     });
 
-    modal.addEventListener("click", (e) => {
-        if (e.target === modal) {
-            modal.classList.remove("show");
-            modalVideo.src = "";
+    // Закрытие при клике вне модального окна
+    window.addEventListener("click", function (event) {
+        const modal = document.getElementById("videoModal");
+        if (event.target === modal) {
+            modal.style.display = "none";
+            document.getElementById("modalVideo").src = "";
         }
     });
 });
