@@ -9,20 +9,19 @@ document.addEventListener("DOMContentLoaded", function() {
             const videoId = this.getAttribute("data-video-id");
             if (videoId) {
                 modalVideo.src = `https://vkvideo.ru/video_ext.php?oid=226153973&id=${videoId}&hd=2`;
-                modal.classList.add("show");
+                modal.style.display = "flex";
             }
         });
     });
 
     function closeModal() {
-        modal.classList.remove("show");
+        modal.style.display = "none";
         setTimeout(() => {
-            modalVideo.src = "";
-        }, 300); // Даем время для анимации перед очисткой src
+            modalVideo.src = ""; // Очистка src после закрытия
+        }, 300);
     }
 
     closeBtn.addEventListener("click", closeModal);
-
     modal.addEventListener("click", function(event) {
         if (event.target === modal) {
             closeModal();
