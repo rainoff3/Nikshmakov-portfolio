@@ -81,8 +81,8 @@ h2 {
 }
 
 .video-frame {
-    width: 320px;
-    height: 180px;
+    width: 500px;
+    height: 300px;
     cursor: pointer;
     position: relative;
     border-radius: 10px;
