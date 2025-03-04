@@ -1,39 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const videoFrames = document.querySelectorAll(".video-frame");
     const modal = document.getElementById("videoModal");
     const modalVideo = document.getElementById("modalVideo");
-    const closeBtn = document.querySelector(".close");
-
-    videoFrames.forEach(frame => {
-        const videoUrl = frame.getAttribute("data-video-url"); // Поменяли атрибут для понятности
-        const previewSrc = frame.getAttribute("data-preview"); 
-
-        if (videoUrl && previewSrc) {
-            frame.style.backgroundImage = `url('${previewSrc}')`;
-            frame.style.backgroundSize = "cover";
-            frame.style.backgroundPosition = "center";
-            frame.style.cursor = "pointer";
-
-            frame.addEventListener("click", function () {
-                openModal(videoUrl);
-            });
-        }
-    });
+    const closeModalBtn = document.querySelector(".close");
 
     function openModal(videoUrl) {
-        console.log("Открываем модалку с видео:", videoUrl); // Проверка
-        modalVideo.src = videoUrl; 
+        modalVideo.src = videoUrl;
         modal.classList.add("show");
     }
 
     function closeModal() {
         modal.classList.remove("show");
         setTimeout(() => {
-            modalVideo.src = ""; 
+            modalVideo.src = ""; // Очищаем src, чтобы видео останавливалось
         }, 300);
     }
 
-    closeBtn.addEventListener("click", closeModal);
+    document.querySelectorAll(".video-frame").forEach(frame => {
+        frame.addEventListener("click", function () {
+            const videoUrl = frame.getAttribute("data-video-url");
+            if (videoUrl) {
+                openModal(videoUrl);
+            }
+        });
+    });
+
+    closeModalBtn.addEventListener("click", closeModal);
 
     window.addEventListener("click", function (event) {
         if (event.target === modal) {
@@ -41,5 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    window.openModal = openModal;
+    // **Фикс бага с появлением при загрузке**  
+    modal.classList.remove("show"); 
 });
