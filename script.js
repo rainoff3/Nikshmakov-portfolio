@@ -4,28 +4,40 @@ document.addEventListener("DOMContentLoaded", function() {
     const modalVideo = document.getElementById("modalVideo");
     const closeBtn = document.querySelector(".close");
 
-    // Гарантируем, что модальное окно скрыто при загрузке страницы
+    // Убедимся, что модальное окно скрыто при загрузке страницы
     modal.style.display = "none";
+    modal.style.opacity = "0";
+    modal.style.visibility = "hidden";
+    modal.style.transition = "opacity 0.3s ease-in-out";
 
     videoFrames.forEach(video => {
         video.addEventListener("click", function() {
             modal.style.display = "flex";
-            modalVideo.src = this.src; 
+            setTimeout(() => {
+                modal.style.opacity = "1";
+                modal.style.visibility = "visible";
+            }, 10);
+            modalVideo.src = this.src;
         });
     });
 
     closeBtn.addEventListener("click", function() {
-        closeModal();
+        modal.style.opacity = "0";
+        modal.style.visibility = "hidden";
+        setTimeout(() => {
+            modal.style.display = "none";
+            modalVideo.src = "";
+        }, 300);
     });
 
     modal.addEventListener("click", function(event) {
         if (event.target === modal) {
-            closeModal();
+            modal.style.opacity = "0";
+            modal.style.visibility = "hidden";
+            setTimeout(() => {
+                modal.style.display = "none";
+                modalVideo.src = "";
+            }, 300);
         }
     });
-
-    function closeModal() {
-        modal.style.display = "none";
-        modalVideo.src = "";
-    }
 });
