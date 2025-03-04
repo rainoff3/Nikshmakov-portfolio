@@ -7,20 +7,25 @@ document.addEventListener("DOMContentLoaded", function() {
     videoFrames.forEach(video => {
         video.addEventListener("click", function() {
             const videoId = this.getAttribute("data-video-id");
-            modalVideo.src = `https://vkvideo.ru/video_ext.php?oid=226153973&id=${videoId}&hd=2`;
-            modal.style.display = "flex";
+            if (videoId) {
+                modalVideo.src = `https://vkvideo.ru/video_ext.php?oid=226153973&id=${videoId}&hd=2`;
+                modal.classList.add("show");
+            }
         });
     });
 
-    closeBtn.addEventListener("click", function() {
-        modal.style.display = "none";
-        modalVideo.src = "";
-    });
+    function closeModal() {
+        modal.classList.remove("show");
+        setTimeout(() => {
+            modalVideo.src = "";
+        }, 300); // Даем время для анимации перед очисткой src
+    }
+
+    closeBtn.addEventListener("click", closeModal);
 
     modal.addEventListener("click", function(event) {
         if (event.target === modal) {
-            modal.style.display = "none";
-            modalVideo.src = "";
+            closeModal();
         }
     });
 });
