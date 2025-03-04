@@ -75,26 +75,23 @@ h2 {
 
 .video-container {
     display: flex;
+    gap: 10px;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
-.video-container iframe {
-    width: 100%;
-    max-width: 540px;
-    height: 310px;
-    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
-    will-change: transform;
-    backface-visibility: hidden;
-    perspective: 1000px;
+.video-frame {
+    width: 300px; /* Задаем фиксированную ширину */
+    height: 170px; /* Пропорциональная высота (16:9) */
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
-.video-container iframe:hover {
-    transform: scale(1.015) translateZ(0);
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+.video-frame img {
+    width: 100%; /* Растягивает изображение в пределах блока */
+    height: 100%;
+    object-fit: cover; /* Обрезает изображение, сохраняя пропорции */
 }
 
 /* Модальное окно для видео */
