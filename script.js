@@ -19,21 +19,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Открытие модального окна
-    function openModal(videoId) {
-        const modal = document.getElementById("videoModal");
-        const modalVideo = document.getElementById("modalVideo");
+   function openModal(videoUrl) {
+    const modal = document.getElementById("videoModal");
+    const modalVideo = document.getElementById("modalVideo");
 
-        modal.style.display = "block";
-        modalVideo.src = `https://vkvideo.ru/video_ext.php?oid=226153973&id=${videoId}&hd=2`;
-    }
+    modalVideo.src = videoUrl;
+    modal.style.display = "block";
+}
 
-    // Закрытие модального окна
-    const closeModal = document.querySelector(".close");
-    closeModal.addEventListener("click", function () {
-        document.getElementById("videoModal").style.display = "none";
-        document.getElementById("modalVideo").src = "";
-    });
+// Закрытие модального окна
+document.querySelector(".close").addEventListener("click", function() {
+    const modal = document.getElementById("videoModal");
+    modal.style.display = "none";
+    document.getElementById("modalVideo").src = "";
+});
+
 
     // Закрытие при клике вне модального окна
     window.addEventListener("click", function (event) {
