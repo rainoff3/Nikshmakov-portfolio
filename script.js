@@ -1,33 +1,24 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const modal = document.createElement("div");
-    modal.classList.add("video-modal");
-    modal.innerHTML = `
-        <div class="video-modal-content">
-            <span class="close-modal">&times;</span>
-            <iframe class="modal-video" src="" frameborder="0" allowfullscreen></iframe>
-        </div>
-    `;
-    document.body.appendChild(modal);
+document.addEventListener("DOMContentLoaded", function() {
+    const videoFrames = document.querySelectorAll(".video-frame");
+    const modal = document.getElementById("videoModal");
+    const modalVideo = document.getElementById("modalVideo");
+    const closeBtn = document.querySelector(".close");
 
-    const modalVideo = modal.querySelector(".modal-video");
-    const closeModal = modal.querySelector(".close-modal");
-
-    document.querySelectorAll(".video-container iframe").forEach(video => {
-        video.addEventListener("click", function (event) {
-            event.preventDefault();
-            modalVideo.src = this.src;
-            modal.classList.add("open");
+    videoFrames.forEach(video => {
+        video.addEventListener("click", function() {
+            modal.style.display = "flex";
+            modalVideo.src = this.src; 
         });
     });
 
-    closeModal.addEventListener("click", function () {
-        modal.classList.remove("open");
-        modalVideo.src = ""; // Очищаем src, чтобы видео останавливалось
+    closeBtn.addEventListener("click", function() {
+        modal.style.display = "none";
+        modalVideo.src = "";
     });
 
-    modal.addEventListener("click", function (event) {
+    modal.addEventListener("click", function(event) {
         if (event.target === modal) {
-            modal.classList.remove("open");
+            modal.style.display = "none";
             modalVideo.src = "";
         }
     });
