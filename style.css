@@ -185,15 +185,27 @@ footer {
     padding: 20px;
 }
 
-/* Контейнер иконок в подвале */
+/* Контейнер иконок соцсетей в подвале */
 .footer-icons {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px; /* Интервал между иконками */
     margin-top: 10px;
 }
 
+/* Размер иконок соцсетей в подвале */
 .footer-icons img {
-    width: 60px;
+    width: 40px; /* Уменьшаем размер иконок */
     height: auto;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .footer-icons {
+        gap: 10px; /* Уменьшаем расстояние между иконками */
+    }
+
+    .footer-icons img {
+        width: 30px; /* Делаем иконки еще меньше на телефонах */
+    }
 }
