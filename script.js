@@ -1,43 +1,34 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Получаем элементы
-    const videoFrames = document.querySelectorAll(".video-frame");
-    const modalBackground = document.querySelector(".modalBackground");
-    const modalClose = document.querySelector(".modalClose");
-    const modalActive = document.querySelector(".modalActive");
-    const modalVideo = document.getElementById("modalVideo");
+    const modal = document.createElement("div");
+    modal.classList.add("video-modal");
+    modal.innerHTML = `
+        <div class="video-modal-content">
+            <span class="close-modal">&times;</span>
+            <iframe class="modal-video" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    `;
+    document.body.appendChild(modal);
 
-    // Скрываем модальное окно при загрузке
-    modalBackground.style.display = "none";
+    const modalVideo = modal.querySelector(".modal-video");
+    const closeModal = modal.querySelector(".close-modal");
 
-    // Открытие модального окна по клику на видео
-    videoFrames.forEach(video => {
+    document.querySelectorAll(".video-container iframe").forEach(video => {
         video.addEventListener("click", function (event) {
             event.preventDefault();
-
-            const videoSrc = this.getAttribute("src"); // Получаем URL видео
-
-            if (videoSrc) {
-                modalVideo.src = videoSrc;
-                modalBackground.style.display = "flex";
-            }
+            modalVideo.src = this.src;
+            modal.classList.add("open");
         });
     });
 
-    // Закрытие модального окна по кнопке
-    modalClose.addEventListener("click", function () {
-        closeModal();
+    closeModal.addEventListener("click", function () {
+        modal.classList.remove("open");
+        modalVideo.src = ""; // Очищаем src, чтобы видео останавливалось
     });
 
-    // Закрытие при клике вне окна
-    modalBackground.addEventListener("click", function (event) {
-        if (event.target === modalBackground) {
-            closeModal();
+    modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            modal.classList.remove("open");
+            modalVideo.src = "";
         }
     });
-
-    // Функция закрытия модального окна
-    function closeModal() {
-        modalBackground.style.display = "none";
-        modalVideo.src = ""; // Очищаем видео
-    }
 });
