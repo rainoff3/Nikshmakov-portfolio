@@ -183,13 +183,20 @@ h2 {
 
 /* Подвал */
 /* Стиль текста в футере */
-.footer-contact {
-    text-align: center;
-    margin-bottom: 10px;
+footer {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.15), #f6f5f0);
     color: #333;
     padding: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-contact {
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .phone-number {
@@ -215,7 +222,6 @@ h2 {
     }
 }
 
-
 /* Контейнер иконок соцсетей в подвале */
 .footer-icons {
     display: flex;
@@ -239,4 +245,6 @@ h2 {
     .footer-icons img {
         width: 30px; /* Делаем иконки еще меньше на телефонах */
     }
+}
+
 }
