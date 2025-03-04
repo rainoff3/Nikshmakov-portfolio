@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const videoFrames = document.querySelectorAll(".video-frame");
     const modal = document.getElementById("videoModal");
     const modalVideo = document.getElementById("modalVideo");
-    const closeBtn = document.querySelector(".close"); 
+    const closeBtn = document.querySelector(".close");
 
     videoFrames.forEach(frame => {
-        const videoUrl = frame.getAttribute("data-video-id"); // Тут лучше data-video-url
+        const videoUrl = frame.getAttribute("data-video-url"); // Поменяли атрибут для понятности
         const previewSrc = frame.getAttribute("data-preview"); 
 
         if (videoUrl && previewSrc) {
@@ -21,15 +21,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function openModal(videoUrl) {
-        modalVideo.src = videoUrl;
-        modal.classList.add("show"); 
+        console.log("Открываем модалку с видео:", videoUrl); // Проверка
+        modalVideo.src = videoUrl; 
+        modal.classList.add("show");
     }
 
     function closeModal() {
         modal.classList.remove("show");
         setTimeout(() => {
-            modalVideo.src = "";
-        }, 300); // Убираем видео после анимации
+            modalVideo.src = ""; 
+        }, 300);
     }
 
     closeBtn.addEventListener("click", closeModal);
@@ -40,6 +41,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Делаем `openModal` глобальной функцией для HTML onclick
     window.openModal = openModal;
 });
