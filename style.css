@@ -51,7 +51,7 @@ header {
 /* Иконки соцсетей — для ПК */
 .social-icons {
     position: absolute;
-    left: 20px; /* Смещаем ближе к центру */
+    left: 40px; /* Сдвигаем правее */
     top: 50%;
     transform: translateY(-50%);
     display: flex;
@@ -68,7 +68,9 @@ header {
 /* Иконки соцсетей — для мобильных устройств */
 @media (max-width: 768px) {
     .social-icons {
-        left: 10px; /* Сдвигаем ближе к краю */
+        left: 20px; /* Сдвигаем правее */
+        top: 60%; /* Опускаем чуть ниже */
+        transform: translateY(-50%);
         gap: 10px; /* Уменьшаем интервал между иконками */
     }
 
