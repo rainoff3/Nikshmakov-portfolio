@@ -83,12 +83,12 @@ h2 {
 }
 
 .video-container iframe:hover {
-    transform: scale(1.05); /* Увеличение всего на 5% */
+    transform: scale(1.02); /* Увеличение всего на 2% */
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); /* Более мягкая тень */
 }
 
 .video-container iframe:hover {
-    transform: scale(1.1); /* Увеличение на 10% */
+    transform: scale(1.05); /* Увеличение на 5% */
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Добавляем тень для эффекта */
 }
 
