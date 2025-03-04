@@ -37,7 +37,6 @@ header {
     margin-top: 30px; /* Подбирай нужное значение */
 }
 
-
 /* Контейнер соцсетей */
 .social-icons {
     position: absolute;
@@ -47,7 +46,6 @@ header {
     flex-direction: row; /* Делаем в ряд */
     gap: 15px; /* Расстояние между иконками */
 }
-
 
 /* Иконки соцсетей */
 .social-icons img {
@@ -97,6 +95,43 @@ h2 {
 .video-container iframe:hover {
     transform: scale(1.015) translateZ(0);
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* Легкая тень */
+}
+
+/* Модальное окно для видео */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+}
+
+.modal iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
 }
 
 /* Подвал */
