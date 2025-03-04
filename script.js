@@ -1,41 +1,43 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+    // Получаем элементы
     const videoFrames = document.querySelectorAll(".video-frame");
-    const modal = document.getElementById("videoModal");
+    const modalBackground = document.querySelector(".modalBackground");
+    const modalClose = document.querySelector(".modalClose");
+    const modalActive = document.querySelector(".modalActive");
     const modalVideo = document.getElementById("modalVideo");
-    const closeBtn = document.querySelector(".close");
 
     // Скрываем модальное окно при загрузке
-    modal.style.display = "none";
+    modalBackground.style.display = "none";
 
+    // Открытие модального окна по клику на видео
     videoFrames.forEach(video => {
-        video.addEventListener("click", function(event) {
-            event.preventDefault(); // Блокируем стандартное поведение
+        video.addEventListener("click", function (event) {
+            event.preventDefault();
 
             const videoSrc = this.getAttribute("src"); // Получаем URL видео
 
             if (videoSrc) {
-                // Добавляем полный URL для iframe
                 modalVideo.src = videoSrc;
-                modal.style.display = "flex"; // Показываем модальное окно
+                modalBackground.style.display = "flex";
             }
         });
     });
 
-    // Закрываем окно при клике на кнопку закрытия
-    closeBtn.addEventListener("click", function() {
+    // Закрытие модального окна по кнопке
+    modalClose.addEventListener("click", function () {
         closeModal();
     });
 
-    // Закрываем окно при клике за пределами видео
-    modal.addEventListener("click", function(event) {
-        if (event.target === modal) {
+    // Закрытие при клике вне окна
+    modalBackground.addEventListener("click", function (event) {
+        if (event.target === modalBackground) {
             closeModal();
         }
     });
 
     // Функция закрытия модального окна
     function closeModal() {
-        modal.style.display = "none";
-        modalVideo.src = ""; // Очищаем src, чтобы остановить видео
+        modalBackground.style.display = "none";
+        modalVideo.src = ""; // Очищаем видео
     }
 });
