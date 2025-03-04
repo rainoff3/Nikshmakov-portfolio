@@ -75,22 +75,27 @@ h2 {
     margin-bottom: 40px;
 }
 
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Боковой интервал между видео */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .video-container iframe {
     width: 100%;
-    max-width: 560px;
-    height: 315px;
-    transition: transform 0.4s ease-in-out; /* Чуть медленнее анимация */
+    max-width: 540px; /* Чуть меньше, чтобы был боковой отступ */
+    height: 310px;
+    transition: transform 0.3s ease-in-out; /* Плавное увеличение */
 }
 
 .video-container iframe:hover {
-    transform: scale(1.02); /* Увеличение всего на 2% */
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); /* Более мягкая тень */
+    transform: scale(1.02); /* Еле заметное увеличение */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15); /* Легкая тень */
 }
 
-.video-container iframe:hover {
-    transform: scale(1.05); /* Увеличение на 5% */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Добавляем тень для эффекта */
-}
 
 /* Подвал */
 footer {
