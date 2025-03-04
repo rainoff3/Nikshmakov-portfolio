@@ -1,3 +1,27 @@
+/* Подключение шрифта */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400..800&display=swap');
+
+/* Основные стили */
+body {
+    font-family: 'EB Garamond', serif; /* Используем шрифт */
+    font-weight: 400;
+    background-color: #f6f5f0; /* Цвет фона */
+    color: black; /* Цвет текста */
+    margin: 0;
+    padding: 0;
+}
+
+/* Заголовки */
+h1, h2, h3 {
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Акцентные элементы */
+strong, em {
+    font-weight: 800;
+    font-style: italic;
+}
 /* Основные стили */
 body {
     background-color: #f6f5f0; /* Цвет фона */
