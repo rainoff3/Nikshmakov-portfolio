@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 
 // Закрытие модального окна
-document.querySelector(".close").addEventListener("click", function() {
+document.querySelector(".close-modal").addEventListener("click", function() {
     const modal = document.getElementById("videoModal");
     modal.style.display = "none";
     document.getElementById("modalVideo").src = "";
