@@ -187,16 +187,16 @@ h2 {
 }
 
 .phone-number {
-    font-family: 'Bahnschrift SemiLight SemiConde', sans-serif;
-    font-size: 22px;
-    font-weight: bold;
+    font-family: 'Tilda Sans', sans-serif;
+    font-size: 26px;
+    font-weight: 400;
     color: #333;
 }
 
 .email {
-    font-family: 'Bahnschrift SemiLight SemiConde', serif;
-    font-size: 14px;
-    color: #666;
+    font-family: 'EB Garamond', serif;
+    font-size: 22px;
+    color: #333;
 }
 
 /* Уменьшаем размер на мобильных устройствах */
