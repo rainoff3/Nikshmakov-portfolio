@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const modalVideo = document.getElementById("modalVideo");
     const closeBtn = document.querySelector(".close");
 
+    // Гарантируем, что модальное окно скрыто при загрузке страницы
+    modal.style.display = "none";
+
     videoFrames.forEach(video => {
         video.addEventListener("click", function() {
             modal.style.display = "flex";
@@ -12,14 +15,17 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     closeBtn.addEventListener("click", function() {
-        modal.style.display = "none";
-        modalVideo.src = "";
+        closeModal();
     });
 
     modal.addEventListener("click", function(event) {
         if (event.target === modal) {
-            modal.style.display = "none";
-            modalVideo.src = "";
+            closeModal();
         }
     });
+
+    function closeModal() {
+        modal.style.display = "none";
+        modalVideo.src = "";
+    }
 });
