@@ -40,10 +40,11 @@ header {
 /* Контейнер соцсетей */
 .social-icons {
     position: absolute;
-    left: 40px;
-    top: 100px;
+    left: 20px; /* Расстояние от левого края */
+    top: 50%;
+    transform: translateY(-50%); /* Центрирование по вертикали */
     display: flex;
-    flex-direction: row;
+    flex-direction: column; /* Выстраиваем в колонку */
     gap: 15px;
 }
 
@@ -51,7 +52,14 @@ header {
 .social-icons img {
     width: 30px;
     height: auto;
+    transition: transform 0.2s ease-in-out;
 }
+
+/* Эффект увеличения при наведении */
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
 
 /* Основной контент */
 .main-content {
