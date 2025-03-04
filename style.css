@@ -202,10 +202,10 @@ h2 {
 /* Уменьшаем размер на мобильных устройствах */
 @media (max-width: 768px) {
     .phone-number {
-        font-size: 18px;
+        font-size: 22px;
     }
     .email {
-        font-size: 14px;
+        font-size: 18px;
     }
 }
 
