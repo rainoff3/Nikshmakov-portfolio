@@ -70,17 +70,22 @@ h2 {
 }
 
 /* Видео-контейнер */
+.section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
 .video-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Два видео в ряд на ПК, одно на телефоне */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Два видео в ряд на ПК, одно на телефоне */
     gap: 20px;
     justify-content: center;
 }
 
-/* Видео */
 .video-container iframe {
-    width: 100%; /* Адаптивное видео */
-    height: 250px; /* Увеличил высоту видео */
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
 }
 
 /* Подвал */
