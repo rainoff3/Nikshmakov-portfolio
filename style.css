@@ -48,12 +48,36 @@ header {
     gap: 15px;
 }
 
-/* Иконки соцсетей */
+/* Иконки соцсетей — для ПК */
+.social-icons {
+    position: absolute;
+    left: 20px; /* Смещаем ближе к центру */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение */
+    gap: 15px; /* Интервал между иконками */
+}
+
+/* Размер иконок для ПК */
 .social-icons img {
     width: 30px;
     height: auto;
-    transition: transform 0.2s ease-in-out;
 }
+
+/* Иконки соцсетей — для мобильных устройств */
+@media (max-width: 768px) {
+    .social-icons {
+        left: 10px; /* Сдвигаем ближе к краю */
+        gap: 10px; /* Уменьшаем интервал между иконками */
+    }
+
+    /* Уменьшаем размер иконок для мобильных */
+    .social-icons img {
+        width: 24px;
+    }
+}
+
 
 /* Эффект увеличения при наведении */
 .social-icons img:hover {
