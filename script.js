@@ -4,22 +4,29 @@ document.addEventListener("DOMContentLoaded", function() {
     const modalVideo = document.getElementById("modalVideo");
     const closeBtn = document.querySelector(".close");
 
+    // Скрываем модальное окно при загрузке
+    modal.style.display = "none";
+
     videoFrames.forEach(video => {
         video.addEventListener("click", function() {
+            const videoSrc = this.getAttribute("src"); // Получаем URL видео
+            modalVideo.src = videoSrc; 
             modal.style.display = "flex";
-            modalVideo.src = this.getAttribute("src"); 
         });
     });
 
     closeBtn.addEventListener("click", function() {
-        modal.style.display = "none";
-        modalVideo.src = "";
+        closeModal();
     });
 
     modal.addEventListener("click", function(event) {
         if (event.target === modal) {
-            modal.style.display = "none";
-            modalVideo.src = "";
+            closeModal();
         }
     });
+
+    function closeModal() {
+        modal.style.display = "none";
+        modalVideo.src = ""; // Очищаем src, чтобы видео не продолжало играть
+    }
 });
