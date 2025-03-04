@@ -181,18 +181,34 @@ h2 {
 
 /* Подвал */
 /* Стиль текста в футере */
-footer {
+.footer-contact {
     text-align: center;
-    padding: 20px;
-    font-size: 30px; /* Размер текста по умолчанию */
+    margin-bottom: 10px;
 }
 
-/* Для мобильных устройств */
+.phone-number {
+    font-family: 'Bahnschrift SemiLight SemiConde', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+}
+
+.email {
+    font-family: 'Bahnschrift SemiLight SemiConde', serif;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Уменьшаем размер на мобильных устройствах */
 @media (max-width: 768px) {
-    footer {
-        font-size: 14px; /* Уменьшенный размер текста на телефоне */
+    .phone-number {
+        font-size: 18px;
+    }
+    .email {
+        font-size: 14px;
     }
 }
+
 
 /* Контейнер иконок соцсетей в подвале */
 .footer-icons {
