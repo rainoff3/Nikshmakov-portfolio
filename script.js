@@ -1,46 +1,45 @@
 document.addEventListener("DOMContentLoaded", function () {
     const videoFrames = document.querySelectorAll(".video-frame");
+    const modal = document.getElementById("videoModal");
+    const modalVideo = document.getElementById("modalVideo");
+    const closeBtn = document.querySelector(".close"); 
 
     videoFrames.forEach(frame => {
-        const videoId = frame.getAttribute("data-video-id");
-        const previewSrc = frame.getAttribute("data-preview"); // Получаем путь к превью
+        const videoUrl = frame.getAttribute("data-video-id"); // Тут лучше data-video-url
+        const previewSrc = frame.getAttribute("data-preview"); 
 
-        if (videoId && previewSrc) {
-            // Устанавливаем превью как фон div
+        if (videoUrl && previewSrc) {
             frame.style.backgroundImage = `url('${previewSrc}')`;
             frame.style.backgroundSize = "cover";
             frame.style.backgroundPosition = "center";
             frame.style.cursor = "pointer";
 
-            // Добавляем обработчик клика для открытия модального окна
             frame.addEventListener("click", function () {
-                openModal(videoId);
+                openModal(videoUrl);
             });
         }
     });
 
-   function openModal(videoUrl) {
-    const modal = document.getElementById("videoModal");
-    const modalVideo = document.getElementById("modalVideo");
+    function openModal(videoUrl) {
+        modalVideo.src = videoUrl;
+        modal.classList.add("show"); 
+    }
 
-    modalVideo.src = videoUrl;
-    modal.style.display = "block";
-}
+    function closeModal() {
+        modal.classList.remove("show");
+        setTimeout(() => {
+            modalVideo.src = "";
+        }, 300); // Убираем видео после анимации
+    }
 
-// Закрытие модального окна
-document.querySelector(".close-modal").addEventListener("click", function() {
-    const modal = document.getElementById("videoModal");
-    modal.style.display = "none";
-    document.getElementById("modalVideo").src = "";
-});
+    closeBtn.addEventListener("click", closeModal);
 
-
-    // Закрытие при клике вне модального окна
     window.addEventListener("click", function (event) {
-        const modal = document.getElementById("videoModal");
         if (event.target === modal) {
-            modal.style.display = "none";
-            document.getElementById("modalVideo").src = "";
+            closeModal();
         }
     });
+
+    // Делаем `openModal` глобальной функцией для HTML onclick
+    window.openModal = openModal;
 });
