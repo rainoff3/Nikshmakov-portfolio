@@ -3,10 +3,10 @@
 
 /* Основные стили */
 body {
-    font-family: 'EB Garamond', serif; /* Используем шрифт */
+    font-family: 'EB Garamond', serif;
     font-weight: 400;
-    background-color: #f6f5f0; /* Цвет фона */
-    color: black; /* Цвет текста */
+    background-color: #f6f5f0;
+    color: black;
     margin: 0;
     padding: 0;
 }
@@ -17,59 +17,51 @@ h1, h2, h3 {
     text-align: center;
 }
 
-/* Акцентные элементы */
-strong, em {
-    font-weight: 800;
-    font-style: italic;
-}
-
 /* Хеддер */
 header {
     display: flex;
-    justify-content: center; /* Выравнивание логотипа по центру */
+    justify-content: center;
     align-items: center;
     position: relative;
     padding: 20px 0;
 }
+
+/* Логотип */
 .logo img {
     width: 200px;
     height: auto;
-    margin-top: 30px; /* Подбирай нужное значение */
 }
 
-
-/* Контейнер соцсетей */
+/* Контейнер соцсетей (вертикально слева) */
 .social-icons {
-    position: absolute;
-    left: 40px; /* Двигаем правее */
-    top: 100px; /* Опускаем чуть ниже */
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
-    flex-direction: row; /* Делаем в ряд */
-    gap: 15px; /* Расстояние между иконками */
+    flex-direction: column;
+    gap: 15px;
 }
-
 
 /* Иконки соцсетей */
 .social-icons img {
-    width: 30px; /* Увеличил размер иконок соцсетей */
+    width: 40px;
     height: auto;
 }
 
 /* Основной контент */
-.main-content {
-    text-align: center; /* Выравнивание заголовков по центру */
+main {
     padding: 20px;
 }
 
-/* Заголовки */
+/* Заголовки секций */
 h2 {
-    text-align: center; /* Выравнивание заголовков по центру */
-    font-size: 28px; /* Чуть больше размер */
+    font-size: 28px;
     font-weight: bold;
     margin: 40px 0 20px 0;
 }
 
-/* Видео-контейнер */
+/* Контейнер видео */
 .section {
     text-align: center;
     margin-bottom: 40px;
@@ -77,22 +69,41 @@ h2 {
 
 .video-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Адаптивная сетка */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    justify-items: center; /* Центрирование видео */
-    max-width: 1200px; /* Ограничиваем ширину контейнера */
-    margin: 0 auto; /* Центрируем */
+    justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.video-container iframe {
+/* Стили для видео-обложек */
+.video-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.video-wrapper img {
     width: 100%;
-    max-width: 560px;
-    height: 315px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 50%;
 }
 
 /* Подвал */
 footer {
-    text-align: center; /* Выравнивание текста в центре */
+    text-align: center;
     padding: 20px;
 }
 
@@ -100,11 +111,24 @@ footer {
 .footer-icons {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Увеличил расстояние между иконками */
+    gap: 15px;
     margin-top: 10px;
 }
 
 .footer-icons img {
-    width: 60px; /* Увеличил размер иконок в подвале */
+    width: 40px;
     height: auto;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .social-icons {
+        left: 10px;
+    }
+    .social-icons img, .footer-icons img {
+        width: 30px;
+    }
+    .logo img {
+        width: 150px;
+    }
 }
