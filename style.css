@@ -88,11 +88,11 @@ h2 {
     width: 100%;
     max-width: 540px; /* Чуть меньше, чтобы был боковой отступ */
     height: 310px;
-    transition: transform 0.5s ease-out; /* Более плавное увеличение */
+    transition: transform 0.1s ease-out; /* Более плавное увеличение */
 }
 
 .video-container iframe:hover {
-    transform: scale(1.02); /* Еле заметное увеличение */
+    transform: scale(1.01); /* Еле заметное увеличение */
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* Легкая тень */
 }
 
