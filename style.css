@@ -88,12 +88,14 @@ h2 {
     width: 100%;
     max-width: 540px; /* Оставляем место для боковых отступов */
     height: 310px;
-    transition: transform 0.1s cubic-bezier(0.33, 1, 0.68, 1), box-shadow 0.1s ease-out;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
     will-change: transform;
+    backface-visibility: hidden; /* Оптимизация для плавности */
+    perspective: 1000px;
 }
 
 .video-container iframe:hover {
-    transform: scale(1.015); /* Совсем небольшое увеличение */
+    transform: scale(1.015) translateZ(0);
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* Легкая тень */
 }
 
