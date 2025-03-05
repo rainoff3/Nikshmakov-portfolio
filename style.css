@@ -124,7 +124,7 @@ h2 {
 
 .about-photo {
     display: block;
-    max-width: 100%;
+    width: 200px; /* Меняй ширину фото, высота авто */
     height: auto;
 }
 
