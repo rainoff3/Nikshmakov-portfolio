@@ -116,15 +116,15 @@ h2 {
 
 .video-frame {
     width: 500px;
+    height: 300px;
     cursor: pointer;
     position: relative;
     border-radius: 10px;
     overflow: hidden;
     background: #ddd;
     display: flex;
-    flex-direction: column; /* Это поможет разместить картинку и подпись по вертикали */
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
     will-change: transform;
 }
@@ -136,16 +136,8 @@ h2 {
 
 .video-frame img {
     width: 100%;
-    height: auto; /* Даем картинке свободную высоту с сохранением пропорций */
+    height: 100%;
     object-fit: cover;
-}
-
-.video-caption {
-    margin-top: 10px; /* Отступ между картинкой и подписью */
-    font-size: 16px;
-    color: #333;
-    text-align: center; /* Центрируем подпись */
-    width: 100%;
 }
 
 @media (max-width: 768px) {
