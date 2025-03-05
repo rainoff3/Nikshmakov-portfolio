@@ -112,14 +112,6 @@ h2 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    align-items: flex-start; /* Выравнивание подписей */
-}
-
-/* Каждый видео-блок (видео + подпись) */
-.video-item {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Подпись прижата к левому краю */
 }
 
 .video-frame {
@@ -146,33 +138,33 @@ h2 {
     object-fit: cover;
 }
 
-/* Подписи */
+/* Блок подписей */
+.video-caption-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
 .video-caption {
     width: 100%;
     max-width: 500px;
     font-size: 16px;
     color: #333;
     text-align: left; /* Выравнивание по левому краю */
-    margin-top: 5px; /* Отступ от видео */
+    margin-top: 10px;
 }
 
-/* Адаптация для мобильных устройств */
+
 @media (max-width: 768px) {
-    .video-container {
-        flex-direction: column; /* Видео и подпись в столбик */
-        align-items: center; /* Центрирование */
-    }
-
     .video-frame {
-        width: 350px; /* Уменьшаем размер превью */
-        height: auto;
+        width: 350px; /* Уменьшаем размер превью на 20% */
+        height: 220px;
     }
-
-    .video-caption {
-        width: 350px; /* Подпись подстраивается */
+        .video-caption {
+        width: 350px; /* Подписи тоже адаптируются */
     }
 }
-
 .modal {
     display: none;
     position: fixed;
