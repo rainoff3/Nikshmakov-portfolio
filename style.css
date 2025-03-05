@@ -139,12 +139,12 @@ h2 {
     height: 100%;
     object-fit: cover;
 }
-.video-title {
-    margin-top: 5px;
-    font-size: 14px;
+.video-caption {
+    margin-top: 10px;
+    font-size: 16px;
     color: #333;
-    text-align: left; /* Текст слева */
-    padding-left: 5px; /* Добавляет небольшой отступ от левого края */
+    text-align: left;
+    width: 100%; /* Чтобы подпись не сжималась */
 }
 
 @media (max-width: 768px) {
