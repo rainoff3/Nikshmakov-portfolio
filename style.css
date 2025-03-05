@@ -131,7 +131,7 @@ h2 {
 .photo-signature {
     position: absolute;
     bottom: -20px; /* Опускаем роспись ниже фото */
-    right: 10px;
+    right: 30px;
     width: 250px; /* Увеличенный размер росписи */
     opacity: 0.9;
 }
