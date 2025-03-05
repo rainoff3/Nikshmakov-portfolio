@@ -158,26 +158,29 @@ h2 {
 
 @media (max-width: 768px) {
     .video-container {
-        flex-direction: column; /* Элементы в столбик */
-        align-items: center; /* Центрирование */
+        display: flex;
+        flex-direction: column; /* Переключаем в столбик */
+        align-items: center;
     }
 
     .video-item {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start; /* Выравнивание по левому краю */
+        flex-direction: column; /* Видео + подпись друг за другом */
+        align-items: flex-start; /* Оставляем подпись слева */
+        margin-bottom: 20px;
     }
 
     .video-frame {
-        width: 350px; /* Уменьшаем размер превью */
+        width: 350px;
         height: auto;
     }
 
     .video-caption {
-        width: 350px; /* Подпись занимает ширину видео */
-        margin-top: 5px; /* Отступ от видео */
+        width: 350px;
+        margin-top: 5px;
     }
 }
+
 
 .modal {
     display: none;
