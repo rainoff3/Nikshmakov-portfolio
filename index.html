@@ -1,1 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>NikShamkov</title>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function openModal(videoUrl) {
+            document.getElementById("modalVideo").src = videoUrl;
+            document.getElementById("videoModal").style.display = "block";
+        }
 
+        function closeModal() {
+            document.getElementById("videoModal").style.display = "none";
+            document.getElementById("modalVideo").src = "";
+        }
+    </script>
+</head>
+<body>
+    <header class="custom-header">
+        <div class="social-icons">
+            <a href="https://instagram.com/nikshmakovv" target="_blank">
+                <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/icons/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://t.me/nikshmakovv" target="_blank">
+                <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/icons/telegram.png" alt="Telegram">
+            </a>
+            <a href="https://wa.me/89059361221" target="_blank">
+                <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/icons/whatsapp.png" alt="WhatsApp">
+            </a>
+        </div>
+        <div class="logo">
+            <a href="#">
+                <img src="logo2" alt="Логотип">
+            </a>
+        </div>
+    </header>
+    
+<main>
+    <section class="section">
+        <h2>Съёмка мероприятий</h2>
+        <div class="video-container">
+            <div class="video-frame" onclick="openModal('https://vkvideo.ru/video_ext.php?oid=226153973&id=456239748&hd=2')">
+                <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/altaybereg.png" alt="Превью видео">
+            </div>
+            <div class="video-frame" onclick="openModal('https://vkvideo.ru/video_ext.php?oid=226153973&id=456239749&hd=2')">
+                <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/video2.jpg" alt="Превью видео">
+            </div>
+        </div>
+
+        <!-- Блок для подписей -->
+        <div class="video-caption-container">
+            <div class="video-caption">Подпись к видео 1</div>
+            <div class="video-caption">Подпись к видео 2</div>
+        </div>
+    </section>
+           <section class="section">
+        <h2>Коммерческая съёмка</h2>
+        <div class="video-container">
+                <div class="video-frame" onclick="openModal('https://vkvideo.ru/video_ext.php?oid=226153973&id=456239750&hd=2')">
+                    <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/altaybereg.png" alt="Превью видео">
+            </div>
+            <div class="video-frame" onclick="openModal('https://vkvideo.ru/video_ext.php?oid=226153973&id=456239749&hd=2')">
+                <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/video2.jpg" alt="Превью видео">
+            </div>
+        </div>
+
+        <!-- Блок для подписей -->
+        <div class="video-caption-container">
+            <div class="video-caption">Подпись к видео 1</div>
+            <div class="video-caption">Подпись к видео 2</div>
+        </div>
+    </section>
+
+        <section class="section">
+            <h2>Аэросъёмка</h2>
+            <div class="video-container">
+                <div class="video-frame" onclick="openModal('https://vkvideo.ru/video_ext.php?oid=226153973&id=456239752&hd=2')">
+                    <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/video5.jpg" alt="Превью видео">
+                </div>
+                <div class="video-frame" onclick="openModal('https://vkvideo.ru/video_ext.php?oid=226153973&id=456239753&hd=2')">
+                    <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/video6.jpg" alt="Превью видео">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-contact">
+            <p class="phone-number">+7 (905) 936-12-21</p>
+            <p class="email">shmakov.nikita.65@gmail.com</p>
+        </div>
+        <div class="footer-icons">
+            <a href="https://instagram.com/nikshmakovv" target="_blank">
+                <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/icons/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://t.me/nikshmakovv" target="_blank">
+                <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/icons/telegram.png" alt="Telegram">
+            </a>
+            <a href="https://wa.me/89059361221" target="_blank">
+                <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/icons/whatsapp.png" alt="WhatsApp">
+            </a>
+        </div>
+    </footer>
+
+   <!-- Модальное окно -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="modalVideo" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
