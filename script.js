@@ -6,6 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
     function openModal(videoUrl) {
         if (!videoUrl) return; // Проверка на пустой URL
 
+        // Добавляем параметры для автовоспроизведения
+        if (videoUrl.includes("vkvideo.ru")) {
+            videoUrl += "&autoplay=1&mute=0";
+        }
+
         modalVideo.src = videoUrl;
         modal.style.display = "flex"; // Делаем модалку видимой
         setTimeout(() => {
