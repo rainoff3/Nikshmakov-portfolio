@@ -101,6 +101,73 @@ h2 {
     margin: 40px 0 20px 0;
 }
 
+.about-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 900px;
+}
+
+.photo-wrapper {
+    position: relative;
+    width: 300px;
+    transform: rotate(-5deg); /* Небольшой наклон */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2); /* Тень */
+}
+
+.about-photo {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.photo-signature {
+    position: absolute;
+    bottom: -10px;
+    right: 10px;
+    width: 120px; /* Размер росписи */
+    opacity: 0.8;
+}
+
+.about-text {
+    max-width: 400px;
+}
+
+.about-text h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.about-text p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .photo-wrapper {
+        transform: rotate(0deg); /* Убираем наклон на мобилке */
+    }
+
+    .photo-signature {
+        bottom: -5px;
+        right: 5px;
+        width: 100px;
+    }
+}
+
 /* Видео-контейнер */
 .section {
     text-align: center;
