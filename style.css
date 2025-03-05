@@ -113,27 +113,27 @@ h2 {
     display: flex;
     align-items: center;
     gap: 40px;
-    max-width: 900px;
 }
 
 .photo-wrapper {
     position: relative;
-    width: 300px;
+    display: inline-block;
     transform: rotate(-5deg); /* Небольшой наклон */
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2); /* Тень */
 }
 
 .about-photo {
-    width: 100%;
-    border-radius: 5px;
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 .photo-signature {
     position: absolute;
-    bottom: -10px;
+    bottom: -20px; /* Опускаем роспись ниже фото */
     right: 10px;
-    width: 120px; /* Размер росписи */
-    opacity: 0.8;
+    width: 150px; /* Увеличенный размер росписи */
+    opacity: 0.9;
 }
 
 .about-text {
@@ -162,9 +162,9 @@ h2 {
     }
 
     .photo-signature {
-        bottom: -5px;
+        bottom: -10px;
         right: 5px;
-        width: 100px;
+        width: 130px; /* Чуть меньше для адаптации */
     }
 }
 
