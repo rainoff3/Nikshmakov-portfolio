@@ -44,10 +44,12 @@
             <h2>Съёмка мероприятий</h2>
             <div class="video-container">
                 <div class="video-frame" onclick="openModal('https://vkvideo.ru/video_ext.php?oid=226153973&id=456239748&hd=2')">
-            <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/altaybereg.png" alt="Превью видео">
+                    <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/altaybereg.png" alt="Превью видео">
+                    <div class="video-caption">Алтай Берег - корпоратив</div>
                 </div>
                 <div class="video-frame" onclick="openModal('https://vkvideo.ru/video_ext.php?oid=226153973&id=456239749&hd=2')">
                     <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/video2.jpg" alt="Превью видео">
+                    <div class="video-caption">Свадебная церемония</div>
                 </div>
             </div>
         </section>
@@ -57,9 +59,11 @@
             <div class="video-container">
                 <div class="video-frame" onclick="openModal('https://vkvideo.ru/video_ext.php?oid=226153973&id=456239750&hd=2')">
                     <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/video3.jpg" alt="Превью видео">
+                    <div class="video-caption">Реклама ресторана</div>
                 </div>
                 <div class="video-frame" onclick="openModal('https://vkvideo.ru/video_ext.php?oid=226153973&id=456239751&hd=2')">
                     <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/video4.jpg" alt="Превью видео">
+                    <div class="video-caption">Имиджевый ролик</div>
                 </div>
             </div>
         </section>
@@ -69,41 +73,40 @@
             <div class="video-container">
                 <div class="video-frame" onclick="openModal('https://vkvideo.ru/video_ext.php?oid=226153973&id=456239752&hd=2')">
                     <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/video5.jpg" alt="Превью видео">
+                    <div class="video-caption">Закат с высоты</div>
                 </div>
                 <div class="video-frame" onclick="openModal('https://vkvideo.ru/video_ext.php?oid=226153973&id=456239753&hd=2')">
                     <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/video6.jpg" alt="Превью видео">
+                    <div class="video-caption">Горный пейзаж</div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-    <div class="footer-contact">
-        <p class="phone-number">+7 (905) 936-12-21</p>
-        <p class="email">shmakov.nikita.65@gmail.com</p>
-    </div>
-    <div class="footer-icons">
-        <a href="https://instagram.com/nikshmakovv" target="_blank">
-            <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/icons/instagram.png" alt="Instagram">
-        </a>
-        <a href="https://t.me/nikshmakovv" target="_blank">
-            <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/icons/telegram.png" alt="Telegram">
-        </a>
-        <a href="https://wa.me/89059361221" target="_blank">
-            <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/icons/whatsapp.png" alt="WhatsApp">
-        </a>
-    </div>
-</footer>
+        <div class="footer-contact">
+            <p class="phone-number">+7 (905) 936-12-21</p>
+            <p class="email">shmakov.nikita.65@gmail.com</p>
+        </div>
+        <div class="footer-icons">
+            <a href="https://instagram.com/nikshmakovv" target="_blank">
+                <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/icons/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://t.me/nikshmakovv" target="_blank">
+                <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/icons/telegram.png" alt="Telegram">
+            </a>
+            <a href="https://wa.me/89059361221" target="_blank">
+                <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/icons/whatsapp.png" alt="WhatsApp">
+            </a>
+        </div>
+    </footer>
 
-
-   <!-- Модальное окно -->
-<div id="videoModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <iframe id="modalVideo" src="" frameborder="0" allowfullscreen></iframe>
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <iframe id="modalVideo" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
     </div>
-</div>
-
 
     <script src="script.js"></script>
 </body>
