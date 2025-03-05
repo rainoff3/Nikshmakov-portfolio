@@ -157,14 +157,28 @@ h2 {
 
 
 @media (max-width: 768px) {
-    .video-frame {
-        width: 350px; /* Уменьшаем размер превью на 20% */
-        height: 220px;
+    .video-container {
+        flex-direction: column; /* Элементы в столбик */
+        align-items: center; /* Центрирование */
     }
-        .video-caption {
-        width: 350px; /* Подписи тоже адаптируются */
+
+    .video-item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Выравнивание по левому краю */
+    }
+
+    .video-frame {
+        width: 350px; /* Уменьшаем размер превью */
+        height: auto;
+    }
+
+    .video-caption {
+        width: 350px; /* Подпись занимает ширину видео */
+        margin-top: 5px; /* Отступ от видео */
     }
 }
+
 .modal {
     display: none;
     position: fixed;
