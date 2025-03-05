@@ -142,8 +142,8 @@ h2 {
 
 @media (max-width: 768px) {
     .video-frame {
-        width: 300px; /* Уменьшаем размер превью на 20% */
-        height: 200px;
+        width: 350px; /* Уменьшаем размер превью на 20% */
+        height: 220px;
     }
 }
 
