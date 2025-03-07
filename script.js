@@ -72,19 +72,21 @@ document.addEventListener("DOMContentLoaded", function () {
     // Проверяем сохранённую тему
     if (localStorage.getItem("theme") === "dark") {
         body.classList.add("dark-mode");
-        themeIcon.src = "icons/moon.png"; // Луна для тёмной темы
+        themeIcon.src = "icons/moon.png"; // Луна
     }
 
     themeToggle.addEventListener("click", function () {
         if (body.classList.contains("dark-mode")) {
             body.classList.remove("dark-mode");
-            themeIcon.src = "icons/sun.png"; // Меняем на Солнце
-            localStorage.setItem("theme", "light"); // Сохраняем выбор
+            themeIcon.src = "icons/sun.png"; // Солнце
+            localStorage.setItem("theme", "light");
         } else {
             body.classList.add("dark-mode");
-            themeIcon.src = "icons/moon.png"; // Меняем на Луну
-            localStorage.setItem("theme", "dark"); // Сохраняем выбор
+            themeIcon.src = "icons/moon.png"; // Луна
+            localStorage.setItem("theme", "dark");
         }
     });
+});
+
 });
 
