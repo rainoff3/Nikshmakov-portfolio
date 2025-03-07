@@ -65,4 +65,36 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+// Переключение тем и анимации гифки
+let isDarkMode = false; // Начальный режим - светлая тема
+
+function toggleTheme() {
+    const body = document.body;
+    const sunGif = document.getElementById('sun-gif');
+    const moonGif = document.getElementById('moon-gif');
+    
+    // Проверяем текущую тему
+    if (isDarkMode) {
+        // Переключаем на светлую тему
+        body.classList.remove('dark-mode');
+        sunGif.style.display = 'block';  // Показываем гифку с солнцем
+        moonGif.style.display = 'none'; // Скрываем гифку с луной
+    } else {
+        // Переключаем на тёмную тему
+        body.classList.add('dark-mode');
+        sunGif.style.display = 'none';  // Скрываем гифку с солнцем
+        moonGif.style.display = 'block'; // Показываем гифку с луной
+    }
+
+    // Замораживаем гифки
+    sunGif.style.animation = 'none';
+    moonGif.style.animation = 'none';
+    sunGif.offsetHeight; // Форсируем перерисовку
+    moonGif.offsetHeight;
+    sunGif.style.animation = 'freeze 1s forwards';
+    moonGif.style.animation = 'freeze 1s forwards';
+
+    // Меняем состояние
+    isDarkMode = !isDarkMode;
+}
 
