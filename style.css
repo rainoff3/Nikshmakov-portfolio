@@ -113,21 +113,15 @@ strong, em {
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Гифки для темы */
-#sun-gif,
-#moon-gif {
+/* Видео для темы */
+#sun-video,
+#moon-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    animation: freeze 0s forwards;
+    display: none;  /* Скрываем оба видео по умолчанию */
 }
 
-/* Замораживаем анимацию */
-@keyframes freeze {
-    0% {
-        transform: scale(1);
-    }
-}
 /* Хеддер */
 header {
     display: flex;
