@@ -40,8 +40,21 @@ strong, em {
     color: white;  /* Белый заголовок */
 }
 .dark-mode footer {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.15), #121212);
-    color: white;  /* Сделать текст белым */
+    background: #1e1e1e; /* Темный фон для футера */
+    color: white; /* Белый текст */
+}
+
+.dark-mode .footer-contact {
+    color: white; /* Белый цвет для текста контактной информации */
+}
+
+.dark-mode .phone-number,
+.dark-mode .email {
+    color: white; /* Белый цвет для номера телефона и email */
+}
+
+.dark-mode .footer-icons img {
+    filter: brightness(0) invert(1); /* Иконки соцсетей становятся белыми */
 }
 
 .dark-mode header {
