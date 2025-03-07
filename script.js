@@ -65,61 +65,33 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
 let isDarkMode = false; // Начальный режим - светлая тема
 
 function toggleTheme() {
     const body = document.body;
-    const sunGif = document.getElementById('sun-gif');
-    const moonGif = document.getElementById('moon-gif');
+    const sunVideo = document.getElementById('sun-video');
+    const moonVideo = document.getElementById('moon-video');
     
     // Проверяем текущую тему
     if (isDarkMode) {
         // Переключаем на светлую тему
         body.classList.remove('dark-mode');
-        sunGif.style.display = 'block';  // Показываем гифку с солнцем
-        moonGif.style.display = 'none'; // Скрываем гифку с луной
-
-        // Запускаем гифку с солнцем
-        sunGif.style.animation = 'none';  // Сбрасываем анимацию
-        sunGif.offsetHeight;  // Форсируем перерисовку
-        sunGif.style.animation = 'play-sun 1s forwards';  // Анимация солнца
+        sunVideo.style.display = 'block';  // Показываем видео с солнцем
+        moonVideo.style.display = 'none'; // Скрываем видео с луной
+        moonVideo.pause();  // Останавливаем видео с луной
+        sunVideo.play();    // Запускаем видео с солнцем
     } else {
         // Переключаем на тёмную тему
         body.classList.add('dark-mode');
-        sunGif.style.display = 'none';  // Скрываем гифку с солнцем
-        moonGif.style.display = 'block'; // Показываем гифку с луной
-
-        // Запускаем гифку с луной
-        moonGif.style.animation = 'none';  // Сбрасываем анимацию
-        moonGif.offsetHeight;  // Форсируем перерисовку
-        moonGif.style.animation = 'play-moon 1s forwards';  // Анимация луны
+        sunVideo.style.display = 'none';  // Скрываем видео с солнцем
+        moonVideo.style.display = 'block'; // Показываем видео с луной
+        sunVideo.pause();  // Останавливаем видео с солнцем
+        moonVideo.play();  // Запускаем видео с луной
     }
-
-    // Замораживаем гифки после проигрывания
-    sunGif.style.animation = 'freeze 0s forwards';
-    moonGif.style.animation = 'freeze 0s forwards';
 
     // Меняем состояние
     isDarkMode = !isDarkMode;
-}
-
-/* Ключевые кадры для анимаций */
-@keyframes play-sun {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1.1); /* Можно добавить эффект, если гифка поддается */
-    }
-}
-
-@keyframes play-moon {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1.1); /* Можно добавить эффект */
-    }
 }
 
 
