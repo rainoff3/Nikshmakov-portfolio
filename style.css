@@ -23,48 +23,9 @@ strong, em {
     font-style: italic;
 }
 
-/* Стили для кнопки переключения темы */
-#theme-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-#theme-toggle:hover {
-    background: #555;
-}
-
-/* Темная тема */
 .dark-mode {
     background-color: #121212;
     color: white;
-}
-
-.dark-mode a {
-    color: #bbb;
-}
-
-.dark-mode header, .dark-mode footer {
-    background-color: #1e1e1e;
-}
-
-.dark-mode .modal-content {
-    background-color: #222;
-    color: white;
-}
-
-
-.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
 }
 
 .dark-mode header {
@@ -88,11 +49,6 @@ strong, em {
 
 .dark-mode a {
     color: #4da8da;
-}
-
-/* Добавим плавность перехода */
-body {
-    transition: background 0.3s, color 0.3s;
 }
 
 /* Хеддер */
