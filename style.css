@@ -29,7 +29,7 @@ strong, em {
 }
 
 .dark-mode .about-me {
-    background-color: #333;  /* Темный фон */
+    background-color: #121212;  /* Темный фон */
 }
 
 .dark-mode .about-text p {
@@ -40,7 +40,7 @@ strong, em {
     color: white;  /* Белый заголовок */
 }
 .dark-mode footer {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.15), #333);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.15), #121212);
     color: white;  /* Сделать текст белым */
 }
 
