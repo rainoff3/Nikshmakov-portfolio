@@ -95,6 +95,44 @@ strong, em {
 .dark-mode a {
     color: #4da8da;
 }
+/* Сдвигаем кнопку переключения темы вправо */
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* Стили для кнопки в обычном состоянии */
+#theme-toggle.sun {
+    background-image: url('path/to/sun-icon.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Стили для кнопки в тёмной теме */
+#theme-toggle.moon {
+    background-image: url('path/to/moon-icon.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Эффект при наведении на кнопку */
+#theme-toggle:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
 
 /* Хеддер */
 header {
