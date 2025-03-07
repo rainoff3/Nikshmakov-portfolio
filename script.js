@@ -69,28 +69,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const themeIcon = document.getElementById("theme-icon");
     const body = document.body;
 
-    function setTheme(dark) {
-        if (dark) {
-            body.classList.add("dark-mode");
-            themeIcon.src = "icons/moon.png";
-            localStorage.setItem("theme", "dark");
-        } else {
-            body.classList.remove("dark-mode");
-            themeIcon.src = "icons/sun.png";
-            localStorage.removeItem("theme");
-        }
+    // Проверяем сохранённую тему
+    if (localStorage.getItem("theme") === "dark") {
+        body.classList.add("dark-mode");
+        themeIcon.src = "icons/moon.png"; // Луна для тёмной темы
     }
 
-    // Проверяем сохранённую тему
-    const isDarkMode = localStorage.getItem("theme") === "dark";
-    setTheme(isDarkMode);
-
     themeToggle.addEventListener("click", function () {
-        themeIcon.style.opacity = "0"; // Плавно скрываем изображение
-        setTimeout(() => {
-            setTheme(!body.classList.contains("dark-mode"));
-            themeIcon.style.opacity = "1"; // Плавно показываем новое изображение
-        }, 300); // Время смены анимации (300 мс)
+        if (body.classList.contains("dark-mode")) {
+            body.classList.remove("dark-mode");
+            themeIcon.src = "icons/sun.png"; // Меняем на Солнце
+            localStorage.setItem("theme", "light"); // Сохраняем выбор
+        } else {
+            body.classList.add("dark-mode");
+            themeIcon.src = "icons/moon.png"; // Меняем на Луну
+            localStorage.setItem("theme", "dark"); // Сохраняем выбор
+        }
     });
 });
 
