@@ -113,15 +113,16 @@ strong, em {
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Иконки с гифками */
-#theme-toggle img {
+/* Гифки для темы */
+#sun-gif,
+#moon-gif {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    animation: freeze 0s forwards; /* Изначально замораживаем */
+    animation: freeze 0s forwards;
 }
 
-/* Анимация для переключения гифки */
+/* Замораживаем анимацию */
 @keyframes freeze {
     0% {
         transform: scale(1);
