@@ -95,6 +95,7 @@ strong, em {
 .dark-mode a {
     color: #4da8da;
 }
+
 /* Сдвигаем кнопку переключения темы вправо */
 #theme-toggle {
     position: fixed;
@@ -126,7 +127,6 @@ strong, em {
         transform: scale(1);
     }
 }
-
 /* Хеддер */
 header {
     display: flex;
