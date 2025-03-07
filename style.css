@@ -96,7 +96,6 @@ strong, em {
     color: #4da8da;
 }
 /* Сдвигаем кнопку переключения темы вправо */
-/* Сдвигаем кнопку переключения темы вправо */
 #theme-toggle {
     position: fixed;
     bottom: 20px;
@@ -107,31 +106,25 @@ strong, em {
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.3s ease;
-    background-image: url('path/to/your-gif.gif'); /* Путь к гифке */
-    background-size: cover;
-    background-position: center;
-    transition: background-image 0.5s ease-in-out;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Стили для кнопки в обычном состоянии (день) */
-#theme-toggle.sun {
-    background-image: url('https://github.com/rainoff3/Nikshmakov-portfolio/blob/main/icons/sun2moon.gif'); /* Путь к гифке с солнцем */
+/* Иконки с гифками */
+#theme-toggle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: freeze 0s forwards; /* Изначально замораживаем */
 }
 
-/* Стили для кнопки в тёмной теме (ночь) */
-#theme-toggle.moon {
-    background-image: url('https://github.com/rainoff3/Nikshmakov-portfolio/blob/main/icons/moonsun.gif'); /* Путь к гифке с луной */
-}
-
-/* Эффект при наведении на кнопку */
-#theme-toggle:hover {
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
-    transform: scale(1.1);
+/* Анимация для переключения гифки */
+@keyframes freeze {
+    0% {
+        transform: scale(1);
+    }
 }
 
 /* Хеддер */
