@@ -64,24 +64,33 @@ document.addEventListener("DOMContentLoaded", function () {
     const isDarkMode = localStorage.getItem("theme") === "dark";
     setTheme(isDarkMode);
 
-    themeToggle.addEventListener("click", function () {
-        if (body.classList.contains("dark-mode")) {
-            themeIcon.src = "icons/moonsun.mp4"; // Включаем анимацию перехода в светлую тему
+document.addEventListener("DOMContentLoaded", function () {
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeIcon = document.getElementById("theme-icon");
+    const body = document.body;
+
+    function setTheme(dark) {
+        if (dark) {
+            body.classList.add("dark-mode");
+            themeIcon.src = "icons/moon.png";
+            localStorage.setItem("theme", "dark");
         } else {
-            themeIcon.src = "icons/sun2moon.mp4"; // Включаем анимацию перехода в тёмную тему
+            body.classList.remove("dark-mode");
+            themeIcon.src = "icons/sun.png";
+            localStorage.removeItem("theme");
         }
+    }
 
-        const videoElement = document.createElement("video");
-        videoElement.src = themeIcon.src;
-        videoElement.autoplay = true;
-        videoElement.muted = true;
-        videoElement.onended = function () {
-            setTheme(!body.classList.contains("dark-mode")); // Переключаем тему после анимации
-            themeIcon.src = body.classList.contains("dark-mode") ? "icons/moon.png" : "icons/sun.png"; // Меняем на статичное изображение
-            videoElement.replaceWith(themeIcon);
-        };
+    // Проверяем сохранённую тему
+    const isDarkMode = localStorage.getItem("theme") === "dark";
+    setTheme(isDarkMode);
 
-        themeIcon.replaceWith(videoElement);
-        videoElement.id = "theme-icon"; // Сохраняем ID
+    themeToggle.addEventListener("click", function () {
+        themeIcon.style.opacity = "0"; // Плавно скрываем изображение
+        setTimeout(() => {
+            setTheme(!body.classList.contains("dark-mode"));
+            themeIcon.style.opacity = "1"; // Плавно показываем новое изображение
+        }, 300); // Время смены анимации (300 мс)
     });
 });
+
