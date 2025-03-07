@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-// Переключение тем и анимации гифки
 let isDarkMode = false; // Начальный режим - светлая тема
 
 function toggleTheme() {
@@ -79,22 +78,47 @@ function toggleTheme() {
         body.classList.remove('dark-mode');
         sunGif.style.display = 'block';  // Показываем гифку с солнцем
         moonGif.style.display = 'none'; // Скрываем гифку с луной
+
+        // Запускаем гифку с солнцем
+        sunGif.style.animation = 'none';  // Сбрасываем анимацию
+        sunGif.offsetHeight;  // Форсируем перерисовку
+        sunGif.style.animation = 'play-sun 1s forwards';  // Анимация солнца
     } else {
         // Переключаем на тёмную тему
         body.classList.add('dark-mode');
         sunGif.style.display = 'none';  // Скрываем гифку с солнцем
         moonGif.style.display = 'block'; // Показываем гифку с луной
+
+        // Запускаем гифку с луной
+        moonGif.style.animation = 'none';  // Сбрасываем анимацию
+        moonGif.offsetHeight;  // Форсируем перерисовку
+        moonGif.style.animation = 'play-moon 1s forwards';  // Анимация луны
     }
 
-    // Замораживаем гифки
-    sunGif.style.animation = 'none';
-    moonGif.style.animation = 'none';
-    sunGif.offsetHeight; // Форсируем перерисовку
-    moonGif.offsetHeight;
-    sunGif.style.animation = 'freeze 1s forwards';
-    moonGif.style.animation = 'freeze 1s forwards';
+    // Замораживаем гифки после проигрывания
+    sunGif.style.animation = 'freeze 0s forwards';
+    moonGif.style.animation = 'freeze 0s forwards';
 
     // Меняем состояние
     isDarkMode = !isDarkMode;
+}
+
+/* Ключевые кадры для анимаций */
+@keyframes play-sun {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1); /* Можно добавить эффект, если гифка поддается */
+    }
+}
+
+@keyframes play-moon {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1); /* Можно добавить эффект */
+    }
 }
 
