@@ -96,6 +96,7 @@ strong, em {
     color: #4da8da;
 }
 /* Сдвигаем кнопку переключения темы вправо */
+/* Сдвигаем кнопку переключения темы вправо */
 #theme-toggle {
     position: fixed;
     bottom: 20px;
@@ -111,20 +112,20 @@ strong, em {
     justify-content: center;
     align-items: center;
     transition: all 0.3s ease;
+    background-image: url('path/to/your-gif.gif'); /* Путь к гифке */
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
 }
 
-/* Стили для кнопки в обычном состоянии */
+/* Стили для кнопки в обычном состоянии (день) */
 #theme-toggle.sun {
-    background-image: url('path/to/sun-icon.png');
-    background-size: cover;
-    background-position: center;
+    background-image: url('path/to/your-gif-day.gif'); /* Путь к гифке с солнцем */
 }
 
-/* Стили для кнопки в тёмной теме */
+/* Стили для кнопки в тёмной теме (ночь) */
 #theme-toggle.moon {
-    background-image: url('path/to/moon-icon.png');
-    background-size: cover;
-    background-position: center;
+    background-image: url('path/to/your-gif-night.gif'); /* Путь к гифке с луной */
 }
 
 /* Эффект при наведении на кнопку */
@@ -132,7 +133,6 @@ strong, em {
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
     transform: scale(1.1);
 }
-
 
 /* Хеддер */
 header {
