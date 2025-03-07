@@ -39,23 +39,29 @@ strong, em {
 .dark-mode .about-text h2 {
     color: white;  /* Белый заголовок */
 }
+
+/* Для темной темы футера */
 .dark-mode footer {
-    background: #1e1e1e; /* Темный фон для футера */
+    background: linear-gradient(to top, rgba(18, 18, 18, 0.8), #121212); /* Градиент с темным фоном */
     color: white; /* Белый текст */
 }
 
+/* Текст в футере */
 .dark-mode .footer-contact {
     color: white; /* Белый цвет для текста контактной информации */
 }
 
+/* Номера телефона и email */
 .dark-mode .phone-number,
 .dark-mode .email {
     color: white; /* Белый цвет для номера телефона и email */
 }
 
+/* Иконки соцсетей в футере */
 .dark-mode .footer-icons img {
-    filter: brightness(0) invert(1); /* Иконки соцсетей становятся белыми */
+    filter: brightness(0) invert(1); /* Иконки становятся белыми */
 }
+
 
 .dark-mode header {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), #121212);
