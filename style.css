@@ -42,7 +42,7 @@ strong, em {
 
 /* Для темной темы футера */
 .dark-mode footer {
-    background: linear-gradient(to top, rgba(18, 18, 18, 0.8), #121212); /* Градиент с темным фоном */
+    background: linear-gradient(to top, rgba(18, 18, 18, 0.9), rgba(30, 30, 30, 0.6), rgba(18, 18, 18, 0.2), #121212); /* Более сложный градиент */
     color: white; /* Белый текст */
 }
 
