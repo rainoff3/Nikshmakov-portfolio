@@ -72,17 +72,6 @@ header {
     margin-top: 30px;
 }
 
-/* Контейнер соцсетей */
-.social-icons {
-    position: absolute;
-    left: 20px; /* Расстояние от левого края */
-    top: 50%;
-    transform: translateY(-50%); /* Центрирование по вертикали */
-    display: flex;
-    flex-direction: column; /* Выстраиваем в колонку */
-    gap: 15px;
-}
-
 /* Иконки соцсетей — для ПК */
 .social-icons {
     position: absolute;
