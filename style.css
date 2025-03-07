@@ -63,8 +63,18 @@ strong, em {
 }
 
 
+/* Темная тема для хеддера */
 .dark-mode header {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), #121212);
+    background: linear-gradient(to bottom, rgba(50, 50, 50, 0.2), rgba(30, 30, 30, 0.8), #121212);
+}
+
+/* Инверсия логотипа и иконок соцсетей в темной теме */
+.dark-mode .logo img {
+    filter: invert(1); /* Инвертируем логотип */
+}
+
+.dark-mode .social-icons img {
+    filter: invert(1); /* Инвертируем иконки соцсетей */
 }
 
 .dark-mode .video-frame {
