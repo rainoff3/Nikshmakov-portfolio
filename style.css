@@ -70,11 +70,11 @@ strong, em {
 
 /* Инверсия логотипа и иконок соцсетей в темной теме */
 .dark-mode .logo img {
-    filter: invert(1); /* Инвертируем логотип */
+    filter: brightness(0) invert(1); /* Иконки становятся белыми */
 }
 
 .dark-mode .social-icons img {
-    filter: invert(1); /* Инвертируем иконки соцсетей */
+    filter: brightness(0) invert(1); /* Иконки становятся белыми */
 }
 
 .dark-mode .video-frame {
