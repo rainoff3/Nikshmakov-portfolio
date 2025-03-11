@@ -76,18 +76,4 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("theme", "light");
         }
     });
-    
-    document.addEventListener("DOMContentLoaded", function () {
-    const elements = document.querySelectorAll(".animate-on-scroll");
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible"); // Добавляем класс, если элемент в зоне видимости
-            }
-        });
-    }, { threshold: 0.2 });
-
-    elements.forEach(element => observer.observe(element));
-    });
 });
