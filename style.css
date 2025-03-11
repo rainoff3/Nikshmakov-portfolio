@@ -118,8 +118,6 @@ strong, em {
     object-fit: cover;
     transition: opacity 0.3s ease-in-out; /* Плавная смена */
 }
-
-}
 /* Хеддер */
 header {
     display: flex;
