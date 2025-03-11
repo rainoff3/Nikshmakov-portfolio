@@ -77,3 +77,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+// Анимация при прокрутке
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("animated");
+        }
+    });
+}, { threshold: 0.2 }); // Запускаем анимацию, когда 20% элемента в зоне видимости
+
+document.querySelectorAll(".element-to-animate").forEach((element) => {
+    observer.observe(element);
+});
