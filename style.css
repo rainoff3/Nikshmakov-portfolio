@@ -118,6 +118,18 @@ strong, em {
     object-fit: cover;
     transition: opacity 0.3s ease-in-out; /* Плавная смена */
 }
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px); /* Элемент немного ниже */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0); /* Поднимаем элемент на место */
+}
+
 /* Хеддер */
 header {
     display: flex;
