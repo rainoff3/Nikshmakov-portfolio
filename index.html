@@ -122,13 +122,31 @@
         </div>
     </footer>
 
-    <!-- Модальное окно -->
+     <!-- Модальное окно -->
     <div id="videoModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <iframe id="modalVideo" src="" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
+
+    <!-- Скрипт анимации прокрутки -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll(".animate-on-scroll");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            elements.forEach(element => observer.observe(element));
+        });
+    </script>
+
     <script src="script.js"></script>
 </body>
 </html>
