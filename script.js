@@ -47,45 +47,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     const themeToggle = document.getElementById("theme-toggle");
+    const themeIcon = document.getElementById("theme-icon");
     const body = document.body;
 
-    // Проверяем сохранённую тему
+    // Проверяем сохранённую тему и обновляем иконку
     if (localStorage.getItem("theme") === "dark") {
         body.classList.add("dark-mode");
+        themeIcon.src = "icons/moon.png"; // Устанавливаем луну
     }
 
     themeToggle.addEventListener("click", function () {
         body.classList.toggle("dark-mode");
 
-        // Сохраняем выбор пользователя
+        // Меняем иконку в зависимости от темы
         if (body.classList.contains("dark-mode")) {
+            themeIcon.style.opacity = "0";
+            setTimeout(() => {
+                themeIcon.src = "icons/moon.png"; // Меняем на луну
+                themeIcon.style.opacity = "1";
+            }, 200);
             localStorage.setItem("theme", "dark");
         } else {
-            localStorage.removeItem("theme");
+            themeIcon.style.opacity = "0";
+            setTimeout(() => {
+                themeIcon.src = "icons/sun.png"; // Меняем на солнце
+                themeIcon.style.opacity = "1";
+            }, 200);
+            localStorage.setItem("theme", "light");
         }
     });
 });
-
-let isDarkMode = false; // Начальный режим - светлая тема
-
-function toggleTheme() {
-    const body = document.body;
-    const themeIcon = document.getElementById("theme-icon");
-
-    if (body.classList.contains("dark-mode")) {
-        body.classList.remove("dark-mode");
-        themeIcon.src = "icons/sun.png"; // Статичное изображение солнца
-    } else {
-        body.classList.add("dark-mode");
-        themeIcon.src = "icons/moonsun.mp4"; // Видео
-        const videoElement = document.createElement("video");
-        videoElement.src = "icons/moonsun.mp4";
-        videoElement.autoplay = true;
-        videoElement.muted = true;
-        videoElement.onended = function () {
-            themeIcon.src = "icons/moon.png"; // Статичное изображение луны после видео
-        };
-        themeIcon.replaceWith(videoElement);
-        videoElement.id = "theme-icon"; // Сохраняем ID
-    }
-}
