@@ -264,7 +264,10 @@ h2 {
     gap: 20px;
     justify-content: center;
     align-items: start;
+    max-width: 900px; /* Ограничиваем ширину */
+    margin: 0 auto; /* Центрируем контейнер */
 }
+
 
 .video-frame {
     width: 500px;
