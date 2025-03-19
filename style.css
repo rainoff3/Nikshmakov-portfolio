@@ -260,9 +260,10 @@ h2 {
 
 .video-container {
     display: grid;
-    flex-wrap: wrap;
-    justify-content: center;
+    grid-template-columns: repeat(2, 1fr); /* Две колонки */
     gap: 20px;
+    justify-content: center;
+    align-items: start;
 }
 
 .video-frame {
