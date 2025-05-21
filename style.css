@@ -1,7 +1,7 @@
-/* Подключение шрифта */
+/* Шрифт */
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400..800&display=swap');
 
-/* Основные стили */
+/* Общие стили */
 body {
     font-family: 'EB Garamond', serif;
     font-weight: 400;
@@ -11,74 +11,52 @@ body {
     padding: 0;
 }
 
-/* Заголовки */
 h1, h2, h3 {
     font-weight: 700;
     text-align: center;
 }
 
-/* Акцентные элементы */
 strong, em {
     font-weight: 800;
     font-style: italic;
 }
 
+/* Темная тема */
 .dark-mode {
     background-color: #121212;
     color: white;
 }
 
-.dark-mode .about-me {
-    background-color: #121212;  /* Темный фон */
+.dark-mode .about-me,
+.dark-mode header {
+    background-color: #121212;
 }
 
 .dark-mode .about-text p {
-    color: #ccc;  /* Светлый текст */
+    color: #ccc;
 }
 
-.dark-mode .about-text h2 {
-    color: white;  /* Белый заголовок */
-}
-
-/* Для темной темы футера */
-.dark-mode footer {
-    background: linear-gradient(to top, rgba(18, 18, 18, 0.9), rgba(30, 30, 30, 0.6), rgba(18, 18, 18, 0.2), #121212); /* Более сложный градиент */
-    color: white; /* Белый текст */
-}
-
-/* Текст в футере */
-.dark-mode .footer-contact {
-    color: white; /* Белый цвет для текста контактной информации */
-}
-
-/* Номера телефона и email */
+.dark-mode .about-text h2,
+.dark-mode .footer-contact,
 .dark-mode .phone-number,
 .dark-mode .email {
-    color: white; /* Белый цвет для номера телефона и email */
+    color: white;
 }
 
-/* Иконки соцсетей в футере */
-.dark-mode .footer-icons img {
-    filter: brightness(0) invert(1); /* Иконки становятся белыми */
+.dark-mode footer {
+    background: linear-gradient(to top, rgba(18,18,18,0.9), rgba(30,30,30,0.6), rgba(18,18,18,0.2), #121212);
+    color: white;
 }
 
-/* Темная тема для хеддера */
-.dark-mode header {
-    background: linear-gradient(to bottom, rgba(50, 50, 50, 0.2), rgba(30, 30, 30, 0.8), #121212);
-}
-
-/* Инверсия логотипа и иконок соцсетей в темной теме */
-.dark-mode .logo img {
-    filter: brightness(0) invert(1); /* Иконки становятся белыми */
-}
-
+.dark-mode .footer-icons img,
+.dark-mode .logo img,
 .dark-mode .social-icons img {
-    filter: brightness(0) invert(1); /* Иконки становятся белыми */
+    filter: brightness(0) invert(1);
 }
 
 .dark-mode .video-frame {
     background: #1e1e1e;
-    box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(255,255,255,0.1);
 }
 
 .dark-mode .video-caption {
@@ -95,96 +73,80 @@ strong, em {
     color: #4da8da;
 }
 
+/* Кнопка смены темы */
 #theme-toggle {
     position: fixed;
     bottom: 20px;
     right: 20px;
     width: 60px;
     height: 60px;
-    background-color: transparent;
+    background: transparent;
     border: none;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 #theme-icon {
-    width: 40px; /* Уменьшаем размер иконки */
+    width: 40px;
     height: 40px;
     object-fit: cover;
-    transition: opacity 0.3s ease-in-out; /* Плавная смена */
+    transition: opacity 0.3s ease-in-out;
 }
 
 /* Хеддер */
 header {
     display: flex;
-    justify-content: center; /* Выравнивание логотипа по центру */
+    justify-content: center;
     align-items: center;
     position: relative;
     padding: 20px 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), #f6f5f0);
-    padding: 20px 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.15), #f6f5f0);
 }
+
 .logo img {
     width: 200px;
     height: auto;
     margin-top: 30px;
 }
 
-/* Иконки соцсетей — для ПК */
+/* Соцсети */
 .social-icons {
     position: absolute;
-    left: 40px; /* Сдвигаем правее */
+    left: 40px;
     top: 60%;
     transform: translateY(-50%);
     display: flex;
-    flex-direction: column; /* Вертикальное расположение */
-    gap: 15px; /* Интервал между иконками */
+    flex-direction: column;
+    gap: 15px;
 }
 
-/* Размер иконок для ПК */
 .social-icons img {
     width: 30px;
     height: auto;
+    transition: transform 0.2s ease;
 }
 
-/* Иконки соцсетей — для мобильных устройств */
-@media (max-width: 768px) {
-    .social-icons {
-        left: 20px; /* Сдвигаем правее */
-        top: 60%; /* Опускаем чуть ниже */
-        transform: translateY(-50%);
-        gap: 10px; /* Уменьшаем интервал между иконками */
-    }
-
-    /* Уменьшаем размер иконок для мобильных */
-    .social-icons img {
-        width: 24px;
-    }
-}
-
-/* Эффект увеличения при наведении */
 .social-icons img:hover {
     transform: scale(1.1);
 }
 
-/* Основной контент */
+/* Контент */
 .main-content {
     text-align: center;
     padding: 20px;
 }
 
-/* Заголовки */
 h2 {
-    text-align: center;
     font-size: 28px;
     font-weight: bold;
     margin: 40px 0 20px 0;
 }
 
+/* Блок обо мне */
 .about-me {
     display: flex;
     justify-content: center;
@@ -201,22 +163,21 @@ h2 {
 
 .photo-wrapper {
     position: relative;
-    display: inline-block;
-    transform: rotate(-5deg); /* Небольшой наклон */
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2); /* Тень */
+    transform: rotate(-5deg);
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.2);
 }
 
 .about-photo {
     display: block;
-    width: 200px; /* Меняй ширину фото, высота авто */
+    width: 200px;
     height: auto;
 }
 
 .photo-signature {
     position: absolute;
-    bottom: -20px; /* Опускаем роспись ниже фото */
+    bottom: -20px;
     right: -45px;
-    width: 250px; /* Увеличенный размер росписи */
+    width: 250px;
     opacity: 0.9;
 }
 
@@ -225,8 +186,8 @@ h2 {
 }
 
 .about-text h2 {
-    margin-bottom: 10px;
     font-size: 24px;
+    margin-bottom: 10px;
 }
 
 .about-text p {
@@ -234,25 +195,7 @@ h2 {
     color: #555;
 }
 
-/* Адаптация для мобильных */
-@media (max-width: 768px) {
-    .about-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .photo-wrapper {
-        transform: rotate(0deg); /* Убираем наклон на мобилке */
-    }
-
-    .photo-signature {
-        bottom: -10px;
-        right: -20px;
-        width: 200px; /* Чуть меньше для адаптации */
-    }
-}
-
-/* Видео-контейнер */
+/* Видео */
 .section {
     text-align: center;
     margin-bottom: 40px;
@@ -277,40 +220,28 @@ h2 {
     justify-content: center;
     align-items: center;
     transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
-    will-change: transform;
 }
 
-/* Вертикальные — большие */
-.video-frame.vertical {
-    aspect-ratio: 9 / 16;
-    width: 100%;
+.video-frame:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Горизонтальные — подстраиваются */
-.video-frame.horizontal {
-    aspect-ratio: 16 / 9;
-    width: 100%;
-}
-
-/* Общий стиль для видео */
-.video-frame video {
+.video-frame video,
+.video-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.video-frame:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+.video-frame.vertical {
+    aspect-ratio: 9 / 16;
 }
 
-.video-frame img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+.video-frame.horizontal {
+    aspect-ratio: 16 / 9;
 }
 
-/* Блок подписей */
 .video-caption-container {
     display: flex;
     justify-content: center;
@@ -323,37 +254,11 @@ h2 {
     max-width: 500px;
     font-size: 16px;
     color: #333;
-    text-align: left; /* Выравнивание по левому краю */
+    text-align: left;
     margin-top: 10px;
 }
 
-
-@media (max-width: 768px) {
-    .video-container {
-        display: flex;
-        flex-direction: column; /* Переключаем в столбик */
-        align-items: center;
-    }
-
-    .video-item {
-        display: flex;
-        flex-direction: column; /* Видео + подпись друг за другом */
-        align-items: flex-start; /* Оставляем подпись слева */
-        margin-bottom: 20px;
-    }
-
-    .video-frame {
-        width: 350px;
-        height: auto;
-    }
-
-    .video-caption {
-        width: 350px;
-        margin-top: 5px;
-    }
-}
-
-
+/* Модалка */
 .modal {
     display: none;
     position: fixed;
@@ -362,7 +267,7 @@ h2 {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0,0,0,0.8);
     align-items: center;
     justify-content: center;
     opacity: 0;
@@ -374,7 +279,6 @@ h2 {
     width: 80%;
     max-width: 900px;
     background: black;
-    padding: 0;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -393,21 +297,18 @@ h2 {
     cursor: pointer;
 }
 
-/* Подвал */
-/* Стиль текста в футере */
+/* Футер */
 footer {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.15), #f6f5f0);
+    background: linear-gradient(to top, rgba(0,0,0,0.15), #f6f5f0);
     color: #333;
     padding: 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 .footer-contact {
-    text-align: center;
     margin-bottom: 10px;
 }
 
@@ -424,37 +325,72 @@ footer {
     color: #333;
 }
 
-/* Уменьшаем размер на мобильных устройствах */
-@media (max-width: 768px) {
-    .phone-number {
-        font-size: 24px;
-    }
-    .email {
-        font-size: 20px;
-    }
-}
-
-/* Контейнер иконок соцсетей в подвале */
 .footer-icons {
     display: flex;
     justify-content: center;
-    gap: 15px; /* Интервал между иконками */
+    gap: 15px;
     margin-top: 10px;
 }
 
-/* Размер иконок соцсетей в подвале */
 .footer-icons img {
-    width: 40px; /* Уменьшаем размер иконок */
+    width: 40px;
     height: auto;
 }
 
-/* Для мобильных устройств */
+/* Адаптив */
 @media (max-width: 768px) {
+    .social-icons {
+        left: 20px;
+        gap: 10px;
+    }
+
+    .social-icons img {
+        width: 24px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .photo-wrapper {
+        transform: none;
+    }
+
+    .photo-signature {
+        bottom: -10px;
+        right: -20px;
+        width: 200px;
+    }
+
+    .video-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-frame {
+        width: 350px;
+        height: auto;
+    }
+
+    .video-caption {
+        width: 350px;
+    }
+
+    .phone-number {
+        font-size: 24px;
+    }
+
+    .email {
+        font-size: 20px;
+    }
+
     .footer-icons {
-        gap: 10px; /* Уменьшаем расстояние между иконками */
+        gap: 10px;
     }
 
     .footer-icons img {
-        width: 30px; /* Делаем иконки еще меньше на телефонах */
+        width: 30px;
     }
 }
