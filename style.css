@@ -215,8 +215,12 @@ h2 {
     border-radius: 10px;
     overflow: hidden;
     background: #ddd;
-    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+
     break-inside: avoid;
+    page-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
 }
 
 .video-frame:hover {
@@ -231,15 +235,6 @@ h2 {
     object-fit: cover;
     display: block;
     border-radius: 10px;
-}
-
-/* Если хочешь немного подогнать высоту вручную — можешь оставить */
-.video-frame.vertical {
-    aspect-ratio: 9 / 16;
-}
-
-.video-frame.horizontal {
-    aspect-ratio: 16 / 9;
 }
 
 .video-caption-container {
@@ -395,3 +390,4 @@ footer {
         width: 30px;
     }
 }
+
