@@ -58,11 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 frame.dataset.videoUrl = video.url;
                 frame.setAttribute("role", "button");
                 frame.setAttribute("tabindex", "0");
-                frame.setAttribute("aria-label", "Открыть видео: " + (video.title || "Видео"));
+                frame.setAttribute("aria-label", "Открыть видео");
 
                 const image = document.createElement("img");
                 image.src = video.cover;
-                image.alt = video.title || "Превью видео";
+                image.alt = "Превью видео";
                 image.loading = "lazy";
                 frame.appendChild(image);
 
