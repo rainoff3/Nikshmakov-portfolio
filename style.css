@@ -395,3 +395,27 @@ footer {
         width: 30px;
     }
 }
+
+
+/* Карточки, добавленные через админ-панель */
+.video-container { column-count: 3; column-gap: 20px; }
+.video-frame[data-video-url] { cursor: pointer; }
+.video-card {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 20px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+.video-card .video-frame { display:block; width:100%; margin:0; }
+.video-card .video-frame img { width:100%; height:100%; object-fit:cover; }
+.video-card .video-caption {
+    max-width:none; width:100%; margin-top:7px;
+    text-align:left; font-size:16px;
+}
+@media (max-width: 900px) { .video-container { column-count:2; } }
+@media (max-width: 768px) {
+    .video-container { column-count:1; display:block; }
+    .video-card { width:min(100%,350px); margin-left:auto; margin-right:auto; }
+    .video-card .video-caption { width:100%; }
+}
