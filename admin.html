@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Админ-панель — NikShmakov</title>
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400..800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}body{margin:0;padding:32px 18px;background:#f6f5f0;color:#171717;font-family:'EB Garamond',serif}
+.admin{max-width:760px;margin:0 auto}header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:28px}
+h1{font-size:34px;margin:0;font-weight:700}h2{font-size:23px;margin:0 0 18px}p{line-height:1.45}.muted{color:#68645d}
+.panel{background:#fffefa;border:1px solid #dedbd2;border-radius:14px;padding:24px;margin:18px 0;box-shadow:0 8px 28px rgba(0,0,0,.04)}
+label{display:block;font-size:18px;font-weight:700;margin:16px 0 6px}
+input,select{width:100%;padding:12px 13px;border:1px solid #c9c5bb;border-radius:8px;background:#fff;color:#171717;font:16px 'EB Garamond',serif}
+input[type=file]{padding:9px}button,.back{display:inline-block;border:0;border-radius:8px;padding:12px 18px;background:#171717;color:white;font:17px 'EB Garamond',serif;cursor:pointer;text-decoration:none}
+button:disabled{opacity:.55;cursor:wait}.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.preview{display:none;max-width:240px;max-height:220px;object-fit:contain;margin-top:12px;border-radius:8px}
+.status{margin-top:14px;padding:12px;border-radius:8px;display:none;white-space:pre-wrap}.ok{display:block;background:#e7f4e8;color:#185b26}.error{display:block;background:#fbe9e7;color:#8a2018}
+.hint{font-size:15px}.token-note{background:#f0eee8;border-radius:8px;padding:12px}
+@media(max-width:600px){body{padding:20px 12px}.panel{padding:18px}.row{grid-template-columns:1fr}h1{font-size:28px}}
+</style>
+</head>
+<body>
+<main class="admin">
+<header><div><h1>NikShmakov</h1><div class="muted">Управление портфолио</div></div><a class="back" href="index.html">На сайт</a></header>
+<section class="panel">
+<h2>1. Подключение GitHub</h2>
+<p class="muted">Вставь Fine-grained Personal Access Token с доступом Contents: Read and write к репозиторию rainoff3/Nikshmakov-portfolio.</p>
+<label for="token">GitHub-токен</label>
+<input id="token" type="password" autocomplete="off" placeholder="github_pat_..." spellcheck="false">
+<p class="token-note hint">Токен используется только в памяти этой вкладки: он не записывается в файлы сайта, localStorage или cookies. Не отправляй его никому и закрывай вкладку после работы.</p>
+<button id="checkToken" type="button">Проверить подключение</button>
+<div id="connectionStatus" class="status" role="status"></div>
+</section>
+<section class="panel">
+<h2>2. Новое видео</h2>
+<form id="videoForm">
+<label for="videoUrl">Ссылка на видео</label><input id="videoUrl" type="url" placeholder="https://vk.com/video_ext.php?..." required>
+<label for="videoTitle">Название</label><input id="videoTitle" type="text" maxlength="100" placeholder="Например, Свадьба в горах" required>
+<div class="row">
+<div><label for="category">Категория</label><select id="category" required>
+<option value="events">Съёмка мероприятий</option><option value="commercial">Коммерческая съёмка</option><option value="personal">Для души</option>
+</select></div>
+<div><label for="format">Формат</label><select id="format" required>
+<option value="horizontal">Горизонтальное 16:9</option><option value="vertical">Вертикальное 9:16</option>
+</select></div>
+</div>
+<label for="cover">Обложка</label><input id="cover" type="file" accept="image/jpeg,image/png,image/webp" required>
+<img id="coverPreview" class="preview" alt="Предпросмотр обложки">
+<p class="muted hint">Обложка автоматически уменьшается до подходящего размера и загружается в папку previews.</p>
+<button id="publish" type="submit">Опубликовать видео</button><div id="publishStatus" class="status" role="status"></div>
+</form>
+</section>
+<p class="muted hint">Публикация создаёт коммиты в GitHub. Обычно сайт обновляется через 1–3 минуты после завершения GitHub Pages build.</p>
+</main>
+<script src="admin.js"></script>
+</body>
+</html>
