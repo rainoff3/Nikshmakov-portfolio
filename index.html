@@ -7,17 +7,6 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>NikShamkov</title>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400..800&display=swap" rel="stylesheet">
-    <script>
-        function openModal(videoUrl) {
-            document.getElementById("modalVideo").src = videoUrl;
-            document.getElementById("videoModal").style.display = "block";
-        }
-
-        function closeModal() {
-            document.getElementById("videoModal").style.display = "none";
-            document.getElementById("modalVideo").src = "";
-        }
-    </script>
 </head>
 <body>
 <header class="custom-header">
@@ -57,29 +46,29 @@
 
     <section class="section">
         <h2>Съёмка мероприятий</h2>
-        <div class="video-container">
-             <div class="video-frame vertical" onclick="openModal('https://vkvideo.ru/video_ext.php?oid=-228483960&id=456239023&hd')">
+        <div class="video-container" data-category="events">
+             <div class="video-frame vertical" data-video-url="https://vkvideo.ru/video_ext.php?oid=-228483960&id=456239023&hd">
                 <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/Wedding%232.png" alt="Превью видео">
             </div>
-            <div class="video-frame vertical" onclick="openModal('https://vk.com/video_ext.php?oid=226153973&id=456239763&autoplay=1')">
+            <div class="video-frame vertical" data-video-url="https://vk.com/video_ext.php?oid=226153973&id=456239763&autoplay=1">
                 <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/wedding3.jpg" alt="Превью видео">
             </div>
-            <div class="video-frame vertical" onclick="openModal('https://vk.com/video_ext.php?oid=226153973&id=456239766&autoplay=1')">
+            <div class="video-frame vertical" data-video-url="https://vk.com/video_ext.php?oid=226153973&id=456239766&autoplay=1">
                 <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/Devichnik.png" alt="Превью видео">
             </div>
-            <div class="video-frame horizontal" onclick="openModal('https://vkvideo.ru/video_ext.php?oid=226153973&id=456239755&hd')">
+            <div class="video-frame horizontal" data-video-url="https://vkvideo.ru/video_ext.php?oid=226153973&id=456239755&hd">
                 <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/The Rooks.png" alt="Превью видео">
             </div>
-            <div class="video-frame horizontal" onclick="openModal('https://vk.com/video_ext.php?oid=226153973&id=456239751&hd')">
+            <div class="video-frame horizontal" data-video-url="https://vk.com/video_ext.php?oid=226153973&id=456239751&hd">
                 <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/Wedding%231.png" alt="Превью видео">
             </div>
-            <div class="video-frame vertical" onclick="openModal('https://vkvideo.ru/video_ext.php?oid=226153973&id=456239753&hd')">
+            <div class="video-frame vertical" data-video-url="https://vkvideo.ru/video_ext.php?oid=226153973&id=456239753&hd">
                 <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/Birthday%231.png" alt="Превью видео">
             </div>
-            <div class="video-frame horizontal" onclick="openModal('https://vk.com/video_ext.php?oid=226153973&id=456239750&hd')">
+            <div class="video-frame horizontal" data-video-url="https://vk.com/video_ext.php?oid=226153973&id=456239750&hd">
                 <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/Mp%231.png" alt="Превью видео">
             </div>
-            <div class="video-frame vertical" onclick="openModal('https://vk.com/video_ext.php?oid=226153973&id=456239736&hd')">
+            <div class="video-frame vertical" data-video-url="https://vk.com/video_ext.php?oid=226153973&id=456239736&hd">
                 <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/Soulmate1.png" alt="Превью видео">
             </div>
         </div>
@@ -87,32 +76,32 @@
 
     <section class="section">
         <h2>Коммерческая съёмка</h2>
-        <div class="video-container">
-             <div class="video-frame horizontal" onclick="openModal('https://vk.com/video_ext.php?oid=226153973&id=456239757')">
+        <div class="video-container" data-category="commercial">
+             <div class="video-frame horizontal" data-video-url="https://vk.com/video_ext.php?oid=226153973&id=456239757">
                 <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/pottery.jpg" alt="Превью видео">
             </div>
-            <div class="video-frame vertical" onclick="openModal('https://vk.com/video_ext.php?oid=226153973&id=456239761&autoplay=1')">
+            <div class="video-frame vertical" data-video-url="https://vk.com/video_ext.php?oid=226153973&id=456239761&autoplay=1">
                 <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/katee_z.jpg" alt="Превью видео">
             </div>
-           <div class="video-frame vertical" onclick="openModal('https://vk.com/video_ext.php?oid=226153973&id=456239765&autoplay=1')">
+           <div class="video-frame vertical" data-video-url="https://vk.com/video_ext.php?oid=226153973&id=456239765&autoplay=1">
                 <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/baloons.jpg" alt="Превью видео">
             </div>
-            <div class="video-frame vertical" onclick="openModal('https://vk.com/video_ext.php?oid=226153973&id=456239764&autoplay=1')">
+            <div class="video-frame vertical" data-video-url="https://vk.com/video_ext.php?oid=226153973&id=456239764&autoplay=1">
                 <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/megapolis.jpg" alt="Превью видео">
             </div>
-            <div class="video-frame horizontal" onclick="openModal('https://vk.com/video_ext.php?oid=226153973&id=456239758&autoplay=1')">
+            <div class="video-frame horizontal" data-video-url="https://vk.com/video_ext.php?oid=226153973&id=456239758&autoplay=1">
                 <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/spa.jpg" alt="Превью видео">
             </div>
-            <div class="video-frame horizontal" onclick="openModal('https://vkvideo.ru/video_ext.php?oid=226153973&id=456239748&hd=2')">
+            <div class="video-frame horizontal" data-video-url="https://vkvideo.ru/video_ext.php?oid=226153973&id=456239748&hd=2">
                 <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/altaybereg.png" alt="Превью видео">
             </div>
-            <div class="video-frame horizontal" onclick="openModal('https://vkvideo.ru/video_ext.php?oid=226153973&id=456239752&hd')">
+            <div class="video-frame horizontal" data-video-url="https://vkvideo.ru/video_ext.php?oid=226153973&id=456239752&hd">
                 <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/Alexdrive.png" alt="Превью видео">
             </div>
-            <div class="video-frame horizontal" onclick="openModal('https://vkvideo.ru/video_ext.php?oid=226153973&id=456239749&hd')">
+            <div class="video-frame horizontal" data-video-url="https://vkvideo.ru/video_ext.php?oid=226153973&id=456239749&hd">
                 <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/Cars.png" alt="Превью видео">
             </div>
-            <div class="video-frame horizontal" onclick="openModal('https://vkvideo.ru/video_ext.php?oid=226153973&id=456239747&hd')">
+            <div class="video-frame horizontal" data-video-url="https://vkvideo.ru/video_ext.php?oid=226153973&id=456239747&hd">
                 <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/AltayBereg%232.png" alt="Превью видео">
             </div>
         </div>
@@ -120,8 +109,8 @@
 
     <section class="section">
         <h2>Для души</h2>
-        <div class="video-container">
-            <div class="video-frame horizontal" onclick="openModal('https://vkvideo.ru/video_ext.php?oid=226153973&id=456239737&hd')">
+        <div class="video-container" data-category="personal">
+            <div class="video-frame horizontal" data-video-url="https://vkvideo.ru/video_ext.php?oid=226153973&id=456239737&hd">
                 <img src="https://raw.githubusercontent.com/rainoff3/Nikshmakov-portfolio/main/previews/RusDusha.png" alt="Превью видео">
             </div>
         </div>
@@ -148,7 +137,7 @@
     <div id="videoModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <iframe id="modalVideo" src="" frameborder="0" allowfullscreen></iframe>
+            <iframe id="modalVideo" src="" frameborder="0" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 
